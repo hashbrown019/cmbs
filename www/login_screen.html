@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="format-detection" content="telephone=no">
+		<meta http-equiv="Content-Security-Policy" content="img-src * data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval';">
+		<meta name="msapplication-tap-highlight" content="no">
+		<meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+		<!-- <meta name="color-scheme" content="light dark"> -->
+        <script src="cordova.js"></script>
+
+		<script type="text/javascript" src="js/Brorn.min.js"></script>
+		<script type="text/javascript" src="js/Variables.js"></script>
+		<script type="text/javascript" src="js/Modules/File_Module.js"></script> <!-- +++++++++++++++++++++++ -->
+
+		<link rel="stylesheet" href="css/x.css">
+		<link rel="stylesheet" href="css/other.css">
+		<link rel="stylesheet" href="css/loader.css">
+		<link rel="stylesheet" href="css/css">
+		<link rel="stylesheet" href="css/chip.css">
+		<link rel="stylesheet" href="css/dropzone.css">
+		<link rel="stylesheet" href="css/font-awesome.min.css">
+	</head>
+	<body class="x-blue center-bg" style="background-image: url('img/logo_trans.png'); height: 100vh;">
+		<header id="offline" class="x-header x-red x-center" style="display:none">Offline Mode</header>
+		<div class="x-container x-margin x-padding"><br><br><br><br><br>
+			<div class="x-container x-padding x-center x-card x-round-large">
+				<img src="img/logo.png" class="x-image"><br><br>
+				<span id="er_note"></span>
+				<span class="x-left"><span class="fa fa-user"></span> Username</span>
+				<input value="user" id="login_username" type="text"  class="login x-input  x-round-large" name="">
+				<br>
+				<span class="x-left"><span class="fa fa-lock"></span> Password </span>
+				<input value="@test1234" id="login_password" type="password" class="login x-input  x-round-large"  name="">
+				<br>
+				<button 
+					class="x-row x-button x-large x-round-large x-text-blue x-white x-right"
+					onclick="login($ID('login_username').value, $ID('login_password').value)">
+						Sign In <span class="fa fa-arrow-right"></span>
+				</button>
+			</div>
+		</div>
+		<div id="login_loading_modal" class="x-modal">
+			<div class="x-modal-content x-padding x-margin x-round-large">
+				<div class="x-container x-center x-padding">
+					<!-- <span onclick="document.getElementById('login_loading_modal').style.display='none'"
+					class="x-button x-display-topright">&times;</span> -->
+					<span class="x-xxxlarge fa fa-circle-o-notch fa-spin x-text-blue"></span><br>
+					<span class="x-text-gray">Loading. please wait</span>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+
+		window.setInterval(function () {
+			if(isOnline()){$ID("offline").style.display="none"}
+			else{$ID("offline").style.display="block"}
+		}, 1000)
+
+		_readFileEntry("user_data_records2.txt",function (res){
+			println(JSON.parse(res).credential.user_id)
+			if(res==undefined){
+				alert("Hello there, It seems that this is your 1st time loging in. please input the credentials on textbox and it will automatically sync from the server.\nDont forget to connect to WiFi or Cellular Data(Charges may apply);")
+			}
+		})
+
+		_readFileEntry("to_beSync.txt",function (res){
+			if(res==undefined || res=="" || res==null){
+				println(" == No Entry for updated list")
+				_createNewFileEntry("to_beSync.txt",JSON.stringify([]))
+			}
+		})
+
+		if(getCookie("usern")==undefined || getCookie("usern")==null){
+			println(' * no Cookies/Session found')
+		}
+		else{println('hascookie')}
+
+		function login(log_usern,log_passwd){
+			if(input_validate('x-input')){
+				$ID('login_loading_modal').style.display='block'
+				var __data = JSON.stringify({"username":log_usern,"password":log_passwd})
+				$send({
+					action : DOMAIN+"/api/login",
+					method : "POST",
+					data : __data,
+					func : function (ress) {
+						var resp = JSON.parse(ress)
+						if(!resp.success){
+							$ID('login_loading_modal').style.display='none'
+							$ID("er_note").innerHTML ="<p class='x-text-red x-pale-red x-leftbar x-border-red '>Login failed</p>"
+						}
+						else{
+							document.cookie = "usern="+$ID("login_username").value;
+							document.cookie = "passwd="+ $ID("login_password").value;
+							$ID('login_loading_modal').style.display='none'
+							goto("home_screen.html?data="+__data)
+							// redirectto("home_screen.html?data="+__data)
+						}
+					}
+				})
+			}
+			else{
+				$ID("er_note").innerHTML = "<p class='x-text-yellow x-pale-yellow x-leftbar x-border-yellow '>Fill up the forms Correctly</p>"
+
+			}
+		}
+
+	</script>
+</html>

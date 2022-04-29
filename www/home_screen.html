@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="format-detection" content="telephone=no">
+		<meta http-equiv="Content-Security-Policy" content="img-src * data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval';">
+		<meta name="msapplication-tap-highlight" content="no">
+		<meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+		<!-- <meta name="color-scheme" content="light dark"> -->
+        <script src="cordova.js"></script>
+
+		<script type="text/javascript" src="js/Brorn.min.js"></script>
+		<script type="text/javascript" src="js/Variables.js"></script>
+		<script type="text/javascript" src="js/Modules/File_Module.js"></script> <!-- +++++++++++++++++++++++ -->
+
+
+		<link rel="stylesheet" href="css/x.css">
+		<link rel="stylesheet" href="css/un_x.css">
+		<link rel="stylesheet" href="css/other.css">
+		<link rel="stylesheet" href="css/loader.css">
+		<link rel="stylesheet" href="css/css">
+		<link rel="stylesheet" href="css/chip.css">
+		<link rel="stylesheet" href="css/dropzone.css">
+		<link rel="stylesheet" href="css/font-awesome.min.css">
+	</head>
+	<body class=" center-bg" style="background-image: url('img/logo_trans.png'); height: 100vh;">
+		<header id="offline" class="x-header x-red x-center" style="display:none">Offline Mode</header>
+		<header class="x-header x-blue">
+			<div class="x-row">
+				<img src="img/logo.png" class="x-image x-left" style="max-width:50%;">
+				<div class="x-right x-padding">
+					<span class="fa fa-user-circle-o x-xxlarge" onclick="user_info()"></span>
+				</div>
+			</div>
+			<div class="x-row" style="background-color:#1d77ab;">
+				<span onclick="add_entry()"  class="x-green x-center crop_btn_sel x-col s4 x-container x-padding" style="border-radius: 0px 20px 20px 0px;">
+					<span class="fa fa-plus"></span><br> Add
+				</span>
+				<span onclick=""  class="x-center typebtn_sel x-round-large x-col s4 x-container x-padding">
+					<span class="fa fa-user"></span><br> Individual</span>
+				<span onclick=""  class="x-center typebtn_sel x-round-large x-col s4 x-container x-padding">
+					<span class="fa fa-users"></span><br> Household</span>
+			</div>
+		</header>
+		
+
+		<div class="">
+
+			<div class="x-container x-row">
+				<span class="x-xlarge x-text-blue"><span class="fa fa-user"></span> Individual</span>
+			</div>
+			<div class="x-container x-row">
+				<input id="s_field" name="" class="x-col s10 x-input x-round-large x-border" placeholder="Search here">
+				<button class="x-col s2 x-round-xlarge x-btn x-blue" onclick="ind_search_field($ID('s_field').value)"><span class="fa fa-search"></span></button><br>
+				<div class="x-row" id="search_note"></div>
+			</div><br>
+			<!-- -----------------------PAGE : INDIVIDUAL------------------------------------- -->
+			<div class="x-container x-row">
+				<script type="text/javascript" src="js/Modules/individual.js"></script> <!-- +++++++++++++++++++++++ -->
+				<div class="x-row" id="indv_list" style="max-height: 80vh;overflow-y: scroll;">
+					<!-- -----------LIST of INDIVIDUAL AS CARDS----------- -->
+				</div>
+			</div>
+		</div>
+		<!-- -----------------------MODAL : USERINFO------------------------------------- -->
+		<div id="modal_user_info" class="x-modal">
+			<div class="x-modal-content x-round-large">
+				<div class="x-container x-padding">
+					<span onclick="$ID('modal_user_info').style.display='none'"
+					class="x-button x-display-topright">&times;</span>
+					<div class="x-container">
+						<span class="x-xlarge x-text-blue"><span class="fa fa-user"></span> User Info</span><br>
+						<span class="x-tiny">
+							<span class="x-text-grey">Name : </span><span id="det_name"></span>
+						</span><br>
+						<span class="x-tiny">
+							<span class="x-text-grey">Area Assigned : </span><span id="det_area" ></span>
+						</span><br>
+						<span class="x-tiny">
+							<span class="x-text-grey">User ID : </span><span id="det_uid" ></span>
+						</span><br>
+						<span class="x-tiny">
+							<span class="x-text-grey">Account Expiration : </span><span id="det_exdate" ></span>
+						</span>
+					</div>
+					<div class="x-padding x-center">
+						<button class="x-btn x-round-large x-block x-green" onclick="SYNC_DATA()">
+							Sync
+						</button>
+					</div>
+					<div class="x-padding x-center">
+						<button class="x-btn x-round-large x-block x-red" onclick="logout()">
+							Sign out
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- -----------------------MODAL : LOADING-------------------------------------- -->
+		<div id="modal_login_loading" class="x-modal" style="display:block">
+			<div class="x-modal-content x-padding x-margin x-round-large">
+				<div class="x-container x-center x-padding">
+					<span class="x-xxxlarge fa fa-circle-o-notch fa-spin x-text-blue"></span><br>
+					<span class="x-text-gray">Loading. please wait</span>
+				</div>
+			</div>
+		</div>
+
+		<!-- ---------------------------MODAL : SAMPLE INDV INFO ------------------------------ -->
+		<div id="_sample_modal_ind_info" class="x-modal" style="display:none;padding: 0px;margin: 0px;">
+			<div class="x-modal-content x-animate-top">
+				<header class="-header x-blue x-padding">
+					<span onclick="$ID('_sample_modal_ind_info').style.display='none';no_edit()" class="x-button x-display-topright x-round-large x-red"><b>close</b></span>
+					Individual - Info
+				</header>
+				<div class="x-container  x-padding">
+					<div id="edit_buttons" class="x-left x-container">
+						<button id="btn_edit" onmouseup="go_edit()" class="x-btn x-round x-yellow"><span class="fa fa-pencil"></span> Edit</button>
+						<div id="bttnHid" style="display:none" >
+							<!-- <button onmouseup="no_edit()" class=" x-btn x-round x-red"><span class="fa fa-remove"></span> Cancel</button> -->
+							<button onmouseup="submit_info_ind()" class=" x-btn x-round x-green"><span class="fa fa-check"></span> submit</button>
+						</div>
+					</div>
+				</div>
+				<form action="#" method="POST">
+					<div id="ind_fields1" class="x-row x-container x-padding">
+						<!-- <iframe src="modal_ind.html" style="border:0px; height:100vh;"></iframe> -->
+					</div>
+				</form>
+			</div>
+		</div>
+		<div class="x-container" style="position: fixed;">
+			<button class="x-button x-circle x-blue"><b>+</b></button>
+		</div>
+
+	</body>
+	<script type="text/javascript">
+
+		try{
+			document.addEventListener("deviceready", onDeviceReady, false);
+			function onDeviceReady() {
+				console.log(cordova.file);
+				println(" * File Module Ready ================================");
+				window.setInterval(function () {
+					if(isOnline()){$ID("offline").style.display="none"}
+					else{$ID("offline").style.display="block"}
+				}, 1000)
+			}
+		}catch(err){println(err)}
+
+		function user_info(){
+			$ID('modal_user_info').style.display='block';
+			$ID('det_name').innerHTML = DATA["credential"]["full_name"];
+			$ID('det_area').innerHTML = DATA["credential"]["brgy"];
+			$ID('det_uid').innerHTML = DATA["credential"]["user_id"];
+			$ID('det_exdate').innerHTML = DATA["credential"]["expired"];
+		}
+
+		function logout(){
+			goto('login_screen.html');
+		}
+
+		function go_edit(){
+			$ID("bttnHid").style.display = "block";
+			$ID("btn_edit").style.display = "none"
+			const inputs = document.querySelectorAll('.ins_f_');
+			inputs.forEach(input => input.disabled = false);
+			println("editting")
+		}
+		function no_edit(){
+			$ID("bttnHid").style.display = "none";
+			$ID("btn_edit").style.display = "block";
+			const inputs = document.querySelectorAll('.ins_f_');
+			inputs.forEach(input => input.disabled = true);
+		}
+
+		function SYNC_DATA(){
+			if(isOnline()){
+				_readFileEntry("to_beSync.txt",function (res){
+					var old_inp = JSON.parse(res) 
+					println(" === # Entries found in *temp* :"+old_inp.length)
+					__DATA_TO_SYNC.data.individual.push(old_inp)
+				})
+
+				$ID('modal_user_info').style.display='none'
+				$ID('modal_login_loading').style.display='block'
+				__DATA_TO_SYNC.access.user_id = DATA.credential.user_id
+				__DATA_TO_SYNC.access.session_id = DATA.credential.session_id
+				$send({
+					action : DOMAIN + "/api/import",
+					method : POST,
+					data : JSON.stringify(__DATA_TO_SYNC),
+					func : function (res_){
+						var res = JSON.parse(res_)
+						println("----- res ------")
+						println(JSON.stringify(res))
+						println("-----------")
+						alert("Data sync finished\nClicking [ok] will request a new data")
+						get_sync()
+						// goto("home_screen.html?data="+url_args['data'])
+						_createNewFileEntry("to_beSync.txt","[]")
+					}
+				})
+			}else{
+				alert("ooops. you are offline\nplease connect to the internet via Wifi or Cellular Data (Charges may apply)")
+			}
+		}
+
+		function add_entry(){
+			get_fields_ind()
+			$ID('edit_buttons').style.display = "block"
+			go_edit()
+			const inputs = document.querySelectorAll('.ins_f_');
+			inputs.forEach(input => input.disabled = false);
+		}
+
+		// offline
+
+	</script>
+</html>

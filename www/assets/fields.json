@@ -1,0 +1,4267 @@
+[
+    {
+        "name": "profile_info",
+        "label": "",
+        "property": {
+            "type": "html",
+            "sub_type": "",
+            "required": true,
+            "readonly": false,
+            "custom_attr": null,
+            "others": null
+        },
+        "display": {
+            "grid": "12",
+            "first": true,
+            "break": true,
+            "group_class": null,
+            "field_class": null
+        },
+        "value": null,
+        "option": "<!-- DEBUG-VIEW START 1 ROOTPATH//novusoft/include/individual/view/profile-info.php -->\n<div class=\"row\">\n    <div class=\"col-md-4\">\n        <img class=\"img-responsive change-image\" src=\"https://cswdtrain.novusoftit.com/public/images/noimageavailable.png\">  \n    </div>\n</div>\n<div class=\"row\">\n    \n    <div class=\"col-md-2 \">\n        <div class=\"form-group\">\n            <label class=\"control-label\" for=\"claim_tag\">Claim Tag</label>\n            <div class=\"row\">\n                <label class=\"checkbox-inline\" for=\"claim_tag0\"><input class=\"\" type=\"radio\" name=\"claim_tag\" id=\"claim_tag0\" value=\"1\" > YES</label>\n                <label class=\"checkbox-inline\" for=\"claim_tag1\"><input class=\"\" type=\"radio\" name=\"claim_tag\" id=\"claim_tag1\" value=\"0\" > NO</label>\n            </div>\n            <div class=\"help-block with-errors\"></div>\n                \n        </div>\n            \n    </div>\n    \n    <div class=\"col-md-10\">\n        <input type=\"hidden\" name=\"profile_image\" id=\"profile_image\" value=\"\">\n        <input type=\"hidden\" name=\"raw_image\" id=\"raw_image\" value=\"\">\n        <input type=\"hidden\" id=\"benifits_list\" value=\"\">\n\n\n        <button type=\"button\" class=\"mb-xs mt-xs mr-xs btn btn-primary mt-lg\" id=\"see_documents\">See Documents</button>\n        <input type=\"hidden\" class=\"individual-group\" id=\"documents_old\" name=\"documents_old\" value=''>\n        <input type=\"hidden\" class=\"individual-group\" id=\"documents\" name=\"documents\" value=''>\n    </div>\n</div>\n\n<!-- DEBUG-VIEW ENDED 1 ROOTPATH//novusoft/include/individual/view/profile-info.php -->\n"
+    },
+    {
+        "name": "",
+        "label": null,
+        "property": {
+            "type": "pure_html",
+            "sub_type": null,
+            "required": true,
+            "readonly": false,
+            "custom_attr": null,
+            "others": null
+        },
+        "display": {
+            "grid": null,
+            "first": false,
+            "break": false,
+            "group_class": null,
+            "field_class": null
+        },
+        "value": null,
+        "option": [
+            "<div id=\"personal_info_group\">"
+        ]
+    },
+    {
+        "name": null,
+        "label": "Basic Information",
+        "property": {
+            "type": "label",
+            "sub_type": null,
+            "required": true,
+            "readonly": false,
+            "custom_attr": null,
+            "others": null
+        },
+        "display": {
+            "grid": "12",
+            "first": true,
+            "break": true,
+            "group_class": null,
+            "field_class": null
+        },
+        "value": null,
+        "option": null
+    },
+    {
+        "name": "first_name",
+        "label": "First name",
+        "property": {
+            "type": "text",
+            "sub_type": null,
+            "required": true,
+            "readonly": false,
+            "custom_attr": null,
+            "others": null
+        },
+        "display": {
+            "grid": "4",
+            "first": true,
+            "break": false,
+            "group_class": null,
+            "field_class": ""
+        },
+        "value": null,
+        "option": null
+    },
+    {
+        "name": "middle_name",
+        "label": "Middle Name",
+        "property": {
+            "type": "text",
+            "sub_type": null,
+            "required": true,
+            "readonly": false,
+            "custom_attr": null,
+            "others": null
+        },
+        "display": {
+            "grid": "3",
+            "first": false,
+            "break": false,
+            "group_class": null,
+            "field_class": null
+        },
+        "value": null,
+        "option": null
+    },
+    {
+        "name": "last_name",
+        "label": "Last Name",
+        "property": {
+            "type": "text",
+            "sub_type": null,
+            "required": true,
+            "readonly": false,
+            "custom_attr": null,
+            "others": null
+        },
+        "display": {
+            "grid": "3",
+            "first": false,
+            "break": false,
+            "group_class": null,
+            "field_class": null
+        },
+        "value": null,
+        "option": null
+    },
+    {
+        "name": "ext_name",
+        "label": "Extention Name",
+        "property": {
+            "type": "text",
+            "sub_type": null,
+            "required": false,
+            "readonly": false,
+            "custom_attr": null,
+            "others": null
+        },
+        "display": {
+            "grid": "2",
+            "first": false,
+            "break": true,
+            "group_class": null,
+            "field_class": null
+        },
+        "value": null,
+        "option": null
+    },
+    {
+        "name": "birthdate",
+        "label": "Birthday &nbsp;&nbsp;<label class=\"no-bday-label\"><input type=\"checkbox\" class=\"no-bday\" name=\"no_bday\" value=1>&nbsp;N/A</lable>",
+        "property": {
+            "type": "text",
+            "sub_type": "date",
+            "required": true,
+            "readonly": false,
+            "custom_attr": [
+                "data-provide='datepicker'",
+                "data-date-format='mm/dd/yyyy'",
+                "data-date-autoclose='true'",
+                "placeholder='MM/DD/YYYY'",
+                "data-plugin-masked-input",
+                "data-input-mask='99/99/9999'"
+            ],
+            "others": null
+        },
+        "display": {
+            "grid": "3",
+            "first": true,
+            "break": false,
+            "group_class": null,
+            "field_class": ""
+        },
+        "value": null,
+        "option": null
+    },
+    {
+        "name": "birthplace",
+        "label": "Birth Place\r\n",
+        "property": {
+            "type": "text",
+            "sub_type": null,
+            "required": false,
+            "readonly": false,
+            "custom_attr": null,
+            "others": null
+        },
+        "display": {
+            "grid": "3",
+            "first": false,
+            "break": false,
+            "group_class": null,
+            "field_class": null
+        },
+        "value": null,
+        "option": null
+    },
+    {
+        "name": "sex",
+        "label": "Gender",
+        "property": {
+            "type": "radio",
+            "sub_type": null,
+            "required": true,
+            "readonly": false,
+            "custom_attr": null,
+            "others": null
+        },
+        "display": {
+            "grid": "3",
+            "first": false,
+            "break": false,
+            "group_class": null,
+            "field_class": null
+        },
+        "value": null,
+        "option": [
+            "MALE",
+            "FEMALE"
+        ]
+    },
+    {
+        "name": "civil_status",
+        "label": "Civil Status\r\n",
+        "property": {
+            "type": "select",
+            "sub_type": "",
+            "required": false,
+            "readonly": false,
+            "custom_attr": null,
+            "others": null
+        },
+        "display": {
+            "grid": "3",
+            "first": false,
+            "break": true,
+            "group_class": null,
+            "field_class": null
+        },
+        "value": null,
+        "option": {
+            "SINGLE": "SINGLE",
+            "MARRIED": "MARRIED",
+            "LIVING-IN": "LIVING-IN",
+            "WIDOWED": "WIDOWED",
+            "SEPARATED": "SEPARATED",
+            "DEVORSED": "DEVORSED",
+            "UNKNOWN": "UNKNOWN"
+        }
+    },
+    {
+        "name": "rel_hh",
+        "label": "Relationship",
+        "property": {
+            "type": "select",
+            "sub_type": "",
+            "required": false,
+            "readonly": false,
+            "custom_attr": null,
+            "others": null
+        },
+        "display": {
+            "grid": "3",
+            "first": true,
+            "break": false,
+            "group_class": null,
+            "field_class": null
+        },
+        "value": null,
+        "option": {
+            "HEAD": "HEAD",
+            "SPOUSE": "SPOUSE",
+            "SON": "SON",
+            "DAUGHTER": "DAUGHTER",
+            "STEPSON": "STEPSON",
+            "STEPDAUGHTER": "STEPDAUGHTER",
+            "SON-IN-LAW": "SON-IN-LAW",
+            "DAUGHTER-IN-LAW": "DAUGHTER-IN-LAW",
+            "GRANDSON": "GRANDSON",
+            "GRANDDAUGHTER": "GRANDDAUGHTER",
+            "FATHER": "FATHER",
+            "MOTHER": "MOTHER",
+            "BROTHER": "BROTHER",
+            "SISTER": "SISTER",
+            "UNCLE": "UNCLE",
+            "AUNT": "AUNT",
+            "NEPHEW": "NEPHEW",
+            "NIECE": "NIECE",
+            "OTHER-RELATIVE": "OTHER-RELATIVE",
+            "NON-RELATIVE": "NON-RELATIVE",
+            "DOMESTIC-HELPER": "DOMESTIC-HELPER"
+        }
+    },
+    {
+        "name": "contact_no",
+        "label": "Contact Number",
+        "property": {
+            "type": "text",
+            "sub_type": null,
+            "required": false,
+            "readonly": false,
+            "custom_attr": null,
+            "others": null
+        },
+        "display": {
+            "grid": "3",
+            "first": false,
+            "break": false,
+            "group_class": null,
+            "field_class": null
+        },
+        "value": null,
+        "option": null
+    },
+    {
+        "name": "email",
+        "label": "E-mail",
+        "property": {
+            "type": "text",
+            "sub_type": "email",
+            "required": false,
+            "readonly": false,
+            "custom_attr": null,
+            "others": null
+        },
+        "display": {
+            "grid": "3",
+            "first": false,
+            "break": false,
+            "group_class": null,
+            "field_class": null
+        },
+        "value": null,
+        "option": null
+    },
+    {
+        "name": "bene_uct",
+        "label": "UCT",
+        "property": {
+            "type": "radio",
+            "sub_type": null,
+            "required": false,
+            "readonly": false,
+            "custom_attr": null,
+            "others": null
+        },
+        "display": {
+            "grid": "3",
+            "first": false,
+            "break": true,
+            "group_class": "",
+            "field_class": null
+        },
+        "value": null,
+        "option": [
+            "YES",
+            "NO"
+        ]
+    },
+    {
+        "name": "remarks2",
+        "label": "Remarks",
+        "property": {
+            "type": "text",
+            "sub_type": null,
+            "required": false,
+            "readonly": false,
+            "custom_attr": null,
+            "others": null
+        },
+        "display": {
+            "grid": "12",
+            "first": true,
+            "break": true,
+            "group_class": null,
+            "field_class": null
+        },
+        "value": null,
+        "option": null
+    },
+    {
+        "name": "nationality",
+        "label": "Nationality",
+        "property": {
+            "type": "select",
+            "sub_type": null,
+            "required": false,
+            "readonly": false,
+            "custom_attr": null,
+            "others": null
+        },
+        "display": {
+            "grid": "2",
+            "first": true,
+            "break": false,
+            "group_class": null,
+            "field_class": null
+        },
+        "value": null,
+        "option": {
+            "FILIPINO": "FILIPINO",
+            "AFGHAN": "AFGHAN",
+            "ÅLANDISH": "ÅLANDISH",
+            "ALBANIAN": "ALBANIAN",
+            "ALGERIAN": "ALGERIAN",
+            "AMERICAN SAMOAN": "AMERICAN SAMOAN",
+            "ANDORRAN": "ANDORRAN",
+            "ANGOLAN": "ANGOLAN",
+            "ANGUILLIAN": "ANGUILLIAN",
+            "ANTIGUAN, BARBUDAN": "ANTIGUAN, BARBUDAN",
+            "ARGENTINEAN": "ARGENTINEAN",
+            "ARMENIAN": "ARMENIAN",
+            "ARUBAN": "ARUBAN",
+            "AUSTRALIAN": "AUSTRALIAN",
+            "AUSTRIAN": "AUSTRIAN",
+            "AZERBAIJANI": "AZERBAIJANI",
+            "BAHAMIAN": "BAHAMIAN",
+            "BAHRAINI": "BAHRAINI",
+            "BANGLADESHI": "BANGLADESHI",
+            "BARBADIAN": "BARBADIAN",
+            "BELARUSIAN": "BELARUSIAN",
+            "BELGIAN": "BELGIAN",
+            "BELIZEAN": "BELIZEAN",
+            "BENINESE": "BENINESE",
+            "BERMUDIAN": "BERMUDIAN",
+            "BHUTANESE": "BHUTANESE",
+            "BOLIVIAN": "BOLIVIAN",
+            "DUTCH": "DUTCH",
+            "BOSNIAN, HERZEGOVINIAN": "BOSNIAN, HERZEGOVINIAN",
+            "MOTSWANA": "MOTSWANA",
+            "BRAZILIAN": "BRAZILIAN",
+            "INDIAN": "INDIAN",
+            "BRUNEIAN": "BRUNEIAN",
+            "BULGARIAN": "BULGARIAN",
+            "BURKINABE": "BURKINABE",
+            "BURUNDIAN": "BURUNDIAN",
+            "CAPE VERDIAN": "CAPE VERDIAN",
+            "CAMBODIAN": "CAMBODIAN",
+            "CAMEROONIAN": "CAMEROONIAN",
+            "CANADIAN": "CANADIAN",
+            "CAYMANIAN": "CAYMANIAN",
+            "CENTRAL AFRICAN": "CENTRAL AFRICAN",
+            "CHADIAN": "CHADIAN",
+            "CHILEAN": "CHILEAN",
+            "CHINESE": "CHINESE",
+            "CHRISTMAS ISLAND": "CHRISTMAS ISLAND",
+            "COCOS ISLANDER": "COCOS ISLANDER",
+            "COLOMBIAN": "COLOMBIAN",
+            "COMORAN": "COMORAN",
+            "CONGOLESE": "CONGOLESE",
+            "COOK ISLANDER": "COOK ISLANDER",
+            "COSTA RICAN": "COSTA RICAN",
+            "IVORIAN": "IVORIAN",
+            "CROATIAN": "CROATIAN",
+            "CUBAN": "CUBAN",
+            "CYPRIOT": "CYPRIOT",
+            "CZECH": "CZECH",
+            "DANISH": "DANISH",
+            "DJIBOUTI": "DJIBOUTI",
+            "DOMINICAN": "DOMINICAN",
+            "ECUADOREAN": "ECUADOREAN",
+            "EGYPTIAN": "EGYPTIAN",
+            "SALVADORAN": "SALVADORAN",
+            "EQUATORIAL GUINEAN": "EQUATORIAL GUINEAN",
+            "ERITREAN": "ERITREAN",
+            "ESTONIAN": "ESTONIAN",
+            "ETHIOPIAN": "ETHIOPIAN",
+            "FALKLAND ISLANDER": "FALKLAND ISLANDER",
+            "FAROESE": "FAROESE",
+            "FIJIAN": "FIJIAN",
+            "FINNISH": "FINNISH",
+            "FRENCH": "FRENCH",
+            "FRENCH POLYNESIAN": "FRENCH POLYNESIAN",
+            "GABONESE": "GABONESE",
+            "GAMBIAN": "GAMBIAN",
+            "GEORGIAN": "GEORGIAN",
+            "GERMAN": "GERMAN",
+            "GHANAIAN": "GHANAIAN",
+            "GIBRALTAR": "GIBRALTAR",
+            "GREEK": "GREEK",
+            "GREENLANDIC": "GREENLANDIC",
+            "GRENADIAN": "GRENADIAN",
+            "GUADELOUPIAN": "GUADELOUPIAN",
+            "GUAMANIAN": "GUAMANIAN",
+            "GUATEMALAN": "GUATEMALAN",
+            "CHANNEL ISLANDER": "CHANNEL ISLANDER",
+            "GUINEAN": "GUINEAN",
+            "GUINEA-BISSAUAN": "GUINEA-BISSAUAN",
+            "GUYANESE": "GUYANESE",
+            "HAITIAN": "HAITIAN",
+            "HEARD AND MCDONALD ISLANDER": "HEARD AND MCDONALD ISLANDER",
+            "HONDURAN": "HONDURAN",
+            "HUNGARIAN": "HUNGARIAN",
+            "ICELANDER": "ICELANDER",
+            "INDONESIAN": "INDONESIAN",
+            "IRANIAN": "IRANIAN",
+            "IRAQI": "IRAQI",
+            "IRISH": "IRISH",
+            "MANX": "MANX",
+            "ISRAELI": "ISRAELI",
+            "ITALIAN": "ITALIAN",
+            "JAMAICAN": "JAMAICAN",
+            "JAPANESE": "JAPANESE",
+            "JORDANIAN": "JORDANIAN",
+            "KAZAKHSTANI": "KAZAKHSTANI",
+            "KENYAN": "KENYAN",
+            "I-KIRIBATI": "I-KIRIBATI",
+            "NORTH KOREAN": "NORTH KOREAN",
+            "SOUTH KOREAN": "SOUTH KOREAN",
+            "KUWAITI": "KUWAITI",
+            "KIRGHIZ": "KIRGHIZ",
+            "LAOTIAN": "LAOTIAN",
+            "LATVIAN": "LATVIAN",
+            "LEBANESE": "LEBANESE",
+            "MOSOTHO": "MOSOTHO",
+            "LIBERIAN": "LIBERIAN",
+            "LIBYAN": "LIBYAN",
+            "LIECHTENSTEINER": "LIECHTENSTEINER",
+            "LITHUANIAN": "LITHUANIAN",
+            "LUXEMBOURGER": "LUXEMBOURGER",
+            "MACEDONIAN": "MACEDONIAN",
+            "MALAGASY": "MALAGASY",
+            "MALAWIAN": "MALAWIAN",
+            "MALAYSIAN": "MALAYSIAN",
+            "MALDIVAN": "MALDIVAN",
+            "MALIAN": "MALIAN",
+            "MALTESE": "MALTESE",
+            "MARSHALLESE": "MARSHALLESE",
+            "MAURITANIAN": "MAURITANIAN",
+            "MAURITIAN": "MAURITIAN",
+            "MEXICAN": "MEXICAN",
+            "MICRONESIAN": "MICRONESIAN",
+            "MOLDOVAN": "MOLDOVAN",
+            "MONEGASQUE": "MONEGASQUE",
+            "MONGOLIAN": "MONGOLIAN",
+            "MONTENEGRIN": "MONTENEGRIN",
+            "MONTSERRATIAN": "MONTSERRATIAN",
+            "MOROCCAN": "MOROCCAN",
+            "MOZAMBICAN": "MOZAMBICAN",
+            "BURMESE": "BURMESE",
+            "NAMIBIAN": "NAMIBIAN",
+            "NAURUAN": "NAURUAN",
+            "NEPALESE": "NEPALESE",
+            "NEW CALEDONIAN": "NEW CALEDONIAN",
+            "NEW ZEALANDER": "NEW ZEALANDER",
+            "NICARAGUAN": "NICARAGUAN",
+            "NIGERIEN": "NIGERIEN",
+            "NIGERIAN": "NIGERIAN",
+            "NIUEAN": "NIUEAN",
+            "NORFOLK ISLANDER": "NORFOLK ISLANDER",
+            "AMERICAN": "AMERICAN",
+            "NORWEGIAN": "NORWEGIAN",
+            "OMANI": "OMANI",
+            "PAKISTANI": "PAKISTANI",
+            "PALAUAN": "PALAUAN",
+            "PALESTINIAN": "PALESTINIAN",
+            "PANAMANIAN": "PANAMANIAN",
+            "PAPUA NEW GUINEAN": "PAPUA NEW GUINEAN",
+            "PARAGUAYAN": "PARAGUAYAN",
+            "PERUVIAN": "PERUVIAN",
+            "PITCAIRN ISLANDER": "PITCAIRN ISLANDER",
+            "POLISH": "POLISH",
+            "PORTUGUESE": "PORTUGUESE",
+            "PUERTO RICAN": "PUERTO RICAN",
+            "QATARI": "QATARI",
+            "KOSOVAR": "KOSOVAR",
+            "ROMANIAN": "ROMANIAN",
+            "RUSSIAN": "RUSSIAN",
+            "RWANDAN": "RWANDAN",
+            "SAINT BARTHéLEMY ISLANDER": "SAINT BARTHéLEMY ISLANDER",
+            "SAINT HELENIAN": "SAINT HELENIAN",
+            "KITTIAN AND NEVISIAN": "KITTIAN AND NEVISIAN",
+            "SAINT LUCIAN": "SAINT LUCIAN",
+            "SAINT MARTIN ISLANDER": "SAINT MARTIN ISLANDER",
+            "SAINT VINCENTIAN": "SAINT VINCENTIAN",
+            "SAMOAN": "SAMOAN",
+            "SAMMARINESE": "SAMMARINESE",
+            "SAO TOMEAN": "SAO TOMEAN",
+            "SAUDI ARABIAN": "SAUDI ARABIAN",
+            "SENEGALESE": "SENEGALESE",
+            "SERBIAN": "SERBIAN",
+            "SEYCHELLOIS": "SEYCHELLOIS",
+            "SIERRA LEONEAN": "SIERRA LEONEAN",
+            "SINGAPOREAN": "SINGAPOREAN",
+            "SLOVAK": "SLOVAK",
+            "SLOVENE": "SLOVENE",
+            "SOLOMON ISLANDER": "SOLOMON ISLANDER",
+            "SOMALI": "SOMALI",
+            "SOUTH AFRICAN": "SOUTH AFRICAN",
+            "SOUTH GEORGIA AND THE SOUTH SANDWICH ISLANDER": "SOUTH GEORGIA AND THE SOUTH SANDWICH ISLANDER",
+            "SOUTH SUDANESE": "SOUTH SUDANESE",
+            "SPANISH": "SPANISH",
+            "SRI LANKAN": "SRI LANKAN",
+            "SUDANESE": "SUDANESE",
+            "SURINAMER": "SURINAMER",
+            "SWAZI": "SWAZI",
+            "SWEDISH": "SWEDISH",
+            "SWISS": "SWISS",
+            "SYRIAN": "SYRIAN",
+            "TAIWANESE": "TAIWANESE",
+            "TADZHIK": "TADZHIK",
+            "TANZANIAN": "TANZANIAN",
+            "THAI": "THAI",
+            "EAST TIMORESE": "EAST TIMORESE",
+            "TOGOLESE": "TOGOLESE",
+            "TOKELAUAN": "TOKELAUAN",
+            "TONGAN": "TONGAN",
+            "TRINIDADIAN": "TRINIDADIAN",
+            "TUNISIAN": "TUNISIAN",
+            "TURKISH": "TURKISH",
+            "TURKMEN": "TURKMEN",
+            "TURKS AND CAICOS ISLANDER": "TURKS AND CAICOS ISLANDER",
+            "TUVALUAN": "TUVALUAN",
+            "UGANDAN": "UGANDAN",
+            "UKRAINIAN": "UKRAINIAN",
+            "EMIRATI": "EMIRATI",
+            "BRITISH": "BRITISH",
+            "URUGUAYAN": "URUGUAYAN",
+            "UZBEKISTANI": "UZBEKISTANI",
+            "NI-VANUATU": "NI-VANUATU",
+            "VENEZUELAN": "VENEZUELAN",
+            "VIETNAMESE": "VIETNAMESE",
+            "VIRGIN ISLANDER": "VIRGIN ISLANDER",
+            "WALLIS AND FUTUNA ISLANDER": "WALLIS AND FUTUNA ISLANDER",
+            "SAHRAWI": "SAHRAWI",
+            "YEMENI": "YEMENI",
+            "ZAMBIAN": "ZAMBIAN",
+            "ZIMBABWEAN": "ZIMBABWEAN"
+        }
+    },
+    {
+        "name": "religion",
+        "label": "Religion",
+        "property": {
+            "type": "text",
+            "sub_type": null,
+            "required": false,
+            "readonly": false,
+            "custom_attr": null,
+            "others": null
+        },
+        "display": {
+            "grid": "3",
+            "first": false,
+            "break": false,
+            "group_class": null,
+            "field_class": null
+        },
+        "value": null,
+        "option": null
+    },
+    {
+        "name": "ethnicity",
+        "label": "Ethnicity",
+        "property": {
+            "type": "text",
+            "sub_type": null,
+            "required": false,
+            "readonly": false,
+            "custom_attr": null,
+            "others": null
+        },
+        "display": {
+            "grid": "3",
+            "first": false,
+            "break": false,
+            "group_class": null,
+            "field_class": null
+        },
+        "value": null,
+        "option": null
+    },
+    {
+        "name": "solo_parent",
+        "label": "Solo Parent",
+        "property": {
+            "type": "radio",
+            "sub_type": null,
+            "required": false,
+            "readonly": false,
+            "custom_attr": null,
+            "others": null
+        },
+        "display": {
+            "grid": "2",
+            "first": false,
+            "break": false,
+            "group_class": "",
+            "field_class": null
+        },
+        "value": null,
+        "option": [
+            "YES",
+            "NO"
+        ]
+    },
+    {
+        "name": "solo_parent_id",
+        "label": "Solo Parent ID",
+        "property": {
+            "type": "text",
+            "sub_type": null,
+            "required": false,
+            "readonly": false,
+            "custom_attr": null,
+            "others": null
+        },
+        "display": {
+            "grid": "2",
+            "first": false,
+            "break": true,
+            "group_class": null,
+            "field_class": null
+        },
+        "value": null,
+        "option": null
+    },
+    {
+        "name": null,
+        "label": "Addresses",
+        "property": {
+            "type": "label",
+            "sub_type": null,
+            "required": true,
+            "readonly": false,
+            "custom_attr": null,
+            "others": null
+        },
+        "display": {
+            "grid": "12",
+            "first": true,
+            "break": true,
+            "group_class": null,
+            "field_class": null
+        },
+        "value": null,
+        "option": null
+    },
+    {
+        "name": "addresses",
+        "label": "",
+        "property": {
+            "type": "html",
+            "sub_type": "",
+            "required": false,
+            "readonly": false,
+            "custom_attr": null,
+            "others": null
+        },
+        "display": {
+            "grid": "12",
+            "first": true,
+            "break": true,
+            "group_class": "",
+            "field_class": null
+        },
+        "value": null,
+        "option": "<!-- DEBUG-VIEW START 7 ROOTPATH//novusoft/include/individual/view/addresses.php -->\n\n<input type=\"hidden\" name=\"c_household_id\" value=\"0\">\n<div class=\"\">\n    <div class=\"table-responsive\">\n    <table class=\"table table-bordered mb-none\">\n        <thead>\n            <tr>\n                <th style=\"width: 157px;\">Status</th>\n                <th style=\"width: 100px;\">Household ID</th>\n                <th>Head Name</th>\n                <th style=\"width: 157px;\">HH Relation</th>\n                <th>Full Address</th>\n            </tr>\n        </thead>\n        <tbody>\n                            <tr>\n                    <td colspan=\"5\">No Address Set/Need to set on household</td>\n                </tr>\n                    </tbody>\n    </table>\n    </div>\n</div>\n<!-- DEBUG-VIEW ENDED 7 ROOTPATH//novusoft/include/individual/view/addresses.php -->\n"
+    },
+    {
+        "name": null,
+        "label": "Education Information",
+        "property": {
+            "type": "label",
+            "sub_type": null,
+            "required": true,
+            "readonly": false,
+            "custom_attr": null,
+            "others": null
+        },
+        "display": {
+            "grid": "12",
+            "first": true,
+            "break": true,
+            "group_class": null,
+            "field_class": null
+        },
+        "value": null,
+        "option": null
+    },
+    {
+        "name": "edication_background",
+        "label": "",
+        "property": {
+            "type": "html",
+            "sub_type": "json",
+            "required": false,
+            "readonly": false,
+            "custom_attr": null,
+            "others": null
+        },
+        "display": {
+            "grid": "12",
+            "first": true,
+            "break": true,
+            "group_class": "",
+            "field_class": null
+        },
+        "value": null,
+        "option": "<!-- DEBUG-VIEW START 2 ROOTPATH//novusoft/include/individual/view/edication_background.php -->\n<div class=\"\">\n    <div class=\"table-responsive\">\n    <table class=\"table table-bordered mb-none\">\n        <thead>\n            <tr>\n                <th>Action</th>\n                <th>Current</th>\n                <th>Type</th>\n                <th>Course</th>\n                <th>Date Completed</th>\n                <th>Institution/School</th>\n                <th>Institution/School Address</th>\n            </tr>\n        </thead>\n        <tbody>\n                        <tr class=\"main-tr\">\n                <td>\n                    <button type=\"button\" class=\"mb-xs mt-xs mr-xs btn btn-default add-row\">Add</button>\n                </td>\n                <td>\n                    <select class=\"form-control firstfld\" name=\"edication_background[current][]\">\n                        <option value=\"\">SELECT</option>\n                        <option value=\"YES - PUBLIC\" >YES - PUBLIC</option>\n                        <option value=\"YES - PRIVATE\" >YES - PRIVATE</option>\n                        <option value=\"NO\" >NO</option>\n                        <option value=\"COMPLETED\" >COMPLETED</option>\n                    </select>\n                </td>\n                <td>\n                    <select class=\"form-control firstfld\" name=\"edication_background[type][]\">\n                        <option value=\"\">SELECT</option>\n                        <option value=\"PRE-SCHOOL\" >PRE-SCHOOL</option>\n                        <option value=\"ELEMENTARY\" >ELEMENTARY</option>\n                        <option value=\"JUNIOR HIGH\" >JUNIOR HIGH</option>\n                        <option value=\"SENIOR HIGH\" >SENIOR HIGH</option>\n                        <option value=\"VOCATIONAL/TECHNICAL\" >VOCATIONAL/TECHNICAL</option>\n                        <option value=\"COLLEGE/UNIVERSITY\" >COLLEGE/UNIVERSITY</option>\n                        <option value=\"TRAINING\" >TRAINING</option>\n                        <option value=\"CERTIFICATE\" >CERTIFICATE</option>\n                    </select>\n                </td>\n                <td>\n                    <input class=\"form-control\" type=\"text\" name=\"edication_background[course][]\" value=\"\">\n                </td>\n                <td>\n                    <input class=\"form-control not-req\" type=\"text\" name=\"edication_background[date_completed][]\" value=\"\" data-provide='datepicker' data-date-format='mm/dd/yyyy' data-date-autoclose='true' placeholder='MM/DD/YYYY' data-plugin-masked-input data-input-mask='99/99/9999'>\n                </td>\n                <td>\n                    <input class=\"form-control\" type=\"text\" name=\"edication_background[institution][]\" value=\"\">\n                </td>\n                <td>\n                    <input class=\"form-control\" type=\"text\" name=\"edication_background[address][]\" value=\"\">\n                </td>\n            </tr>\n                    </tbody>\n    </table>\n    </div>\n</div>\n<!-- DEBUG-VIEW ENDED 2 ROOTPATH//novusoft/include/individual/view/edication_background.php -->\n"
+    },
+    {
+        "name": "award_received",
+        "label": "Award Received",
+        "property": {
+            "type": "select",
+            "sub_type": "tags",
+            "required": false,
+            "readonly": false,
+            "custom_attr": [
+                "multiple"
+            ],
+            "others": null
+        },
+        "display": {
+            "grid": "4",
+            "first": true,
+            "break": false,
+            "group_class": "",
+            "field_class": "select-tags-insert"
+        },
+        "value": null,
+        "option": null
+    },
+    {
+        "name": "gawad_talino",
+        "label": "Gawad Talino Awardee\r\n",
+        "property": {
+            "type": "radio",
+            "sub_type": null,
+            "required": false,
+            "readonly": false,
+            "custom_attr": null,
+            "others": null
+        },
+        "display": {
+            "grid": "4",
+            "first": false,
+            "break": false,
+            "group_class": "",
+            "field_class": null
+        },
+        "value": null,
+        "option": [
+            "YES",
+            "NO"
+        ]
+    },
+    {
+        "name": "learning_type",
+        "label": "Learning Type",
+        "property": {
+            "type": "select",
+            "sub_type": "",
+            "required": false,
+            "readonly": false,
+            "custom_attr": null,
+            "others": null
+        },
+        "display": {
+            "grid": "4",
+            "first": false,
+            "break": true,
+            "group_class": null,
+            "field_class": null
+        },
+        "value": null,
+        "option": {
+            "MODULE": "MODULE",
+            "ONLINE": "ONLINE",
+            "MIXED/HYBRID": "MIXED/HYBRID",
+            "FACE TO FACE": "FACE TO FACE"
+        }
+    },
+    {
+        "name": "",
+        "label": null,
+        "property": {
+            "type": "pure_html",
+            "sub_type": null,
+            "required": true,
+            "readonly": false,
+            "custom_attr": null,
+            "others": null
+        },
+        "display": {
+            "grid": null,
+            "first": false,
+            "break": false,
+            "group_class": null,
+            "field_class": null
+        },
+        "value": null,
+        "option": [
+            "</div>"
+        ]
+    },
+    {
+        "name": null,
+        "label": "<label><input type=\"checkbox\" class=\"form-control\" name=\"benefits[]\" value=\"peso\">Public Employment Service Office (PESO)</label>",
+        "property": {
+            "type": "label",
+            "sub_type": null,
+            "required": false,
+            "readonly": false,
+            "custom_attr": null,
+            "others": null
+        },
+        "display": {
+            "grid": "12",
+            "first": true,
+            "break": true,
+            "group_class": "",
+            "field_class": null
+        },
+        "value": null,
+        "option": null
+    },
+    {
+        "name": "employment_type",
+        "label": "Type Of Employment",
+        "property": {
+            "type": "select",
+            "sub_type": "",
+            "required": false,
+            "readonly": false,
+            "custom_attr": null,
+            "others": null
+        },
+        "display": {
+            "grid": "6",
+            "first": true,
+            "break": false,
+            "group_class": "peso all-type req",
+            "field_class": null
+        },
+        "value": null,
+        "option": {
+            "EMPLOYMENT": "EMPLOYMENT",
+            "BUSINESS": "BUSINESS",
+            "REMITTANCE": "REMITTANCE",
+            "INVESTMENTS": "INVESTMENTS",
+            "OTHERS": "OTHERS",
+            "UNEMPLOYED": "UNEMPLOYED"
+        }
+    },
+    {
+        "name": "unemployed",
+        "label": "Unemployed",
+        "property": {
+            "type": "select",
+            "sub_type": "",
+            "required": false,
+            "readonly": false,
+            "custom_attr": null,
+            "others": null
+        },
+        "display": {
+            "grid": "6",
+            "first": false,
+            "break": true,
+            "group_class": "peso hide-f",
+            "field_class": null
+        },
+        "value": null,
+        "option": {
+            "NEW ENTRANTS": "NEW ENTRANTS",
+            "FRESH GRADUATE": "FRESH GRADUATE",
+            "FINISHED CONTRACT": "FINISHED CONTRACT",
+            "RESIGNED": "RESIGNED",
+            "RETIRED": "RETIRED",
+            "TREMINATED/LAID OFF (LOCAL)": "TREMINATED/LAID OFF (LOCAL)",
+            "TERMINATED/LAID OFF": "TERMINATED/LAID OFF"
+        }
+    },
+    {
+        "name": "occupation",
+        "label": "Occupation",
+        "property": {
+            "type": "text",
+            "sub_type": null,
+            "required": false,
+            "readonly": false,
+            "custom_attr": null,
+            "others": null
+        },
+        "display": {
+            "grid": "3",
+            "first": true,
+            "break": false,
+            "group_class": "peso all-type",
+            "field_class": null
+        },
+        "value": null,
+        "option": null
+    },
+    {
+        "name": "company_name",
+        "label": "Company Address",
+        "property": {
+            "type": "text",
+            "sub_type": null,
+            "required": false,
+            "readonly": false,
+            "custom_attr": null,
+            "others": null
+        },
+        "display": {
+            "grid": "3",
+            "first": false,
+            "break": false,
+            "group_class": "peso all-type",
+            "field_class": null
+        },
+        "value": null,
+        "option": null
+    },
+    {
+        "name": "occupation_place",
+        "label": "Company Name",
+        "property": {
+            "type": "text",
+            "sub_type": null,
+            "required": false,
+            "readonly": false,
+            "custom_attr": null,
+            "others": null
+        },
+        "display": {
+            "grid": "3",
+            "first": false,
+            "break": false,
+            "group_class": "peso all-type",
+            "field_class": null
+        },
+        "value": null,
+        "option": null
+    },
+    {
+        "name": "monthly_income",
+        "label": "Monthly Income",
+        "property": {
+            "type": "text",
+            "sub_type": null,
+            "required": false,
+            "readonly": false,
+            "custom_attr": null,
+            "others": null
+        },
+        "display": {
+            "grid": "3",
+            "first": false,
+            "break": true,
+            "group_class": "peso all-type",
+            "field_class": "rate-only"
+        },
+        "value": null,
+        "option": null
+    },
+    {
+        "name": "tin_no",
+        "label": "TIN No.",
+        "property": {
+            "type": "text",
+            "sub_type": null,
+            "required": false,
+            "readonly": false,
+            "custom_attr": null,
+            "others": null
+        },
+        "display": {
+            "grid": "3",
+            "first": true,
+            "break": false,
+            "group_class": "peso all-type",
+            "field_class": null
+        },
+        "value": null,
+        "option": null
+    },
+    {
+        "name": "pagibig_no",
+        "label": "PAGIBIG No.",
+        "property": {
+            "type": "text",
+            "sub_type": null,
+            "required": false,
+            "readonly": false,
+            "custom_attr": null,
+            "others": null
+        },
+        "display": {
+            "grid": "3",
+            "first": false,
+            "break": false,
+            "group_class": "peso all-type",
+            "field_class": null
+        },
+        "value": null,
+        "option": null
+    },
+    {
+        "name": "passport_no",
+        "label": "Passport No.",
+        "property": {
+            "type": "text",
+            "sub_type": null,
+            "required": false,
+            "readonly": false,
+            "custom_attr": null,
+            "others": null
+        },
+        "display": {
+            "grid": "3",
+            "first": false,
+            "break": false,
+            "group_class": "peso all-type",
+            "field_class": null
+        },
+        "value": null,
+        "option": null
+    },
+    {
+        "name": "passpord_expiry_date",
+        "label": "Passport Expiry Date",
+        "property": {
+            "type": "text",
+            "sub_type": "date",
+            "required": false,
+            "readonly": false,
+            "custom_attr": [
+                "data-provide='datepicker'",
+                "data-date-format='mm/yyyy'",
+                "data-date-autoclose='true'",
+                "placeholder='MM/YYYY'",
+                "data-plugin-masked-input",
+                "data-input-mask='99/9999'"
+            ],
+            "others": null
+        },
+        "display": {
+            "grid": "3",
+            "first": false,
+            "break": true,
+            "group_class": "peso all-type",
+            "field_class": ""
+        },
+        "value": null,
+        "option": null
+    },
+    {
+        "name": "cedula_no",
+        "label": "Cedula No",
+        "property": {
+            "type": "text",
+            "sub_type": null,
+            "required": false,
+            "readonly": false,
+            "custom_attr": null,
+            "others": null
+        },
+        "display": {
+            "grid": "4",
+            "first": true,
+            "break": false,
+            "group_class": "peso all-type",
+            "field_class": null
+        },
+        "value": null,
+        "option": null
+    },
+    {
+        "name": "issuing_brgy",
+        "label": "Issuing Brgy",
+        "property": {
+            "type": "text",
+            "sub_type": null,
+            "required": false,
+            "readonly": false,
+            "custom_attr": null,
+            "others": null
+        },
+        "display": {
+            "grid": "4",
+            "first": false,
+            "break": false,
+            "group_class": "peso all-type",
+            "field_class": null
+        },
+        "value": null,
+        "option": null
+    },
+    {
+        "name": "date_issued",
+        "label": "Date Issued",
+        "property": {
+            "type": "text",
+            "sub_type": "date",
+            "required": false,
+            "readonly": false,
+            "custom_attr": [
+                "data-provide='datepicker'",
+                "data-date-format='mm/yyyy'",
+                "data-date-autoclose='true'",
+                "placeholder='MM/YYYY'",
+                "data-plugin-masked-input",
+                "data-input-mask='99/9999'"
+            ],
+            "others": null
+        },
+        "display": {
+            "grid": "4",
+            "first": false,
+            "break": true,
+            "group_class": "peso all-type",
+            "field_class": ""
+        },
+        "value": null,
+        "option": null
+    },
+    {
+        "name": "abroad",
+        "label": "Abroad\r\n",
+        "property": {
+            "type": "radio",
+            "sub_type": null,
+            "required": false,
+            "readonly": false,
+            "custom_attr": null,
+            "others": null
+        },
+        "display": {
+            "grid": "2",
+            "first": true,
+            "break": false,
+            "group_class": "peso all-type",
+            "field_class": null
+        },
+        "value": null,
+        "option": [
+            "YES",
+            "NO"
+        ]
+    },
+    {
+        "name": "abroad_country",
+        "label": "Country",
+        "property": {
+            "type": "select",
+            "sub_type": "",
+            "required": false,
+            "readonly": false,
+            "custom_attr": null,
+            "others": null
+        },
+        "display": {
+            "grid": "2",
+            "first": false,
+            "break": false,
+            "group_class": "peso hide-f",
+            "field_class": "select2-init"
+        },
+        "value": null,
+        "option": {
+            "PHILIPPINES": "PHILIPPINES",
+            "AFGHANISTAN": "AFGHANISTAN",
+            "ÅLAND ISLANDS": "ÅLAND ISLANDS",
+            "ALBANIA": "ALBANIA",
+            "ALGERIA": "ALGERIA",
+            "AMERICAN SAMOA": "AMERICAN SAMOA",
+            "ANDORRA": "ANDORRA",
+            "ANGOLA": "ANGOLA",
+            "ANGUILLA": "ANGUILLA",
+            "ANTARCTICA": "ANTARCTICA",
+            "ANTIGUA AND BARBUDA": "ANTIGUA AND BARBUDA",
+            "ARGENTINA": "ARGENTINA",
+            "ARMENIA": "ARMENIA",
+            "ARUBA": "ARUBA",
+            "AUSTRALIA": "AUSTRALIA",
+            "AUSTRIA": "AUSTRIA",
+            "AZERBAIJAN": "AZERBAIJAN",
+            "BAHAMAS": "BAHAMAS",
+            "BAHRAIN": "BAHRAIN",
+            "BANGLADESH": "BANGLADESH",
+            "BARBADOS": "BARBADOS",
+            "BELARUS": "BELARUS",
+            "BELGIUM": "BELGIUM",
+            "BELIZE": "BELIZE",
+            "BENIN": "BENIN",
+            "BERMUDA": "BERMUDA",
+            "BHUTAN": "BHUTAN",
+            "BOLIVIA (PLURINATIONAL STATE OF)": "BOLIVIA (PLURINATIONAL STATE OF)",
+            "BONAIRE, SINT EUSTATIUS AND SABA": "BONAIRE, SINT EUSTATIUS AND SABA",
+            "BOSNIA AND HERZEGOVINA": "BOSNIA AND HERZEGOVINA",
+            "BOTSWANA": "BOTSWANA",
+            "BOUVET ISLAND": "BOUVET ISLAND",
+            "BRAZIL": "BRAZIL",
+            "BRITISH INDIAN OCEAN TERRITORY": "BRITISH INDIAN OCEAN TERRITORY",
+            "BRUNEI DARUSSALAM": "BRUNEI DARUSSALAM",
+            "BULGARIA": "BULGARIA",
+            "BURKINA FASO": "BURKINA FASO",
+            "BURUNDI": "BURUNDI",
+            "CABO VERDE": "CABO VERDE",
+            "CAMBODIA": "CAMBODIA",
+            "CAMEROON": "CAMEROON",
+            "CANADA": "CANADA",
+            "CAYMAN ISLANDS": "CAYMAN ISLANDS",
+            "CENTRAL AFRICAN REPUBLIC": "CENTRAL AFRICAN REPUBLIC",
+            "CHAD": "CHAD",
+            "CHILE": "CHILE",
+            "CHINA": "CHINA",
+            "CHRISTMAS ISLAND": "CHRISTMAS ISLAND",
+            "COCOS (KEELING) ISLANDS": "COCOS (KEELING) ISLANDS",
+            "COLOMBIA": "COLOMBIA",
+            "COMOROS": "COMOROS",
+            "CONGO": "CONGO",
+            "CONGO (DEMOCRATIC REPUBLIC OF THE)": "CONGO (DEMOCRATIC REPUBLIC OF THE)",
+            "COOK ISLANDS": "COOK ISLANDS",
+            "COSTA RICA": "COSTA RICA",
+            "CôTE D'IVOIRE": "CôTE D'IVOIRE",
+            "CROATIA": "CROATIA",
+            "CUBA": "CUBA",
+            "CURAçAO": "CURAçAO",
+            "CYPRUS": "CYPRUS",
+            "CZECH REPUBLIC": "CZECH REPUBLIC",
+            "DENMARK": "DENMARK",
+            "DJIBOUTI": "DJIBOUTI",
+            "DOMINICA": "DOMINICA",
+            "DOMINICAN REPUBLIC": "DOMINICAN REPUBLIC",
+            "ECUADOR": "ECUADOR",
+            "EGYPT": "EGYPT",
+            "EL SALVADOR": "EL SALVADOR",
+            "EQUATORIAL GUINEA": "EQUATORIAL GUINEA",
+            "ERITREA": "ERITREA",
+            "ESTONIA": "ESTONIA",
+            "ETHIOPIA": "ETHIOPIA",
+            "FALKLAND ISLANDS (MALVINAS)": "FALKLAND ISLANDS (MALVINAS)",
+            "FAROE ISLANDS": "FAROE ISLANDS",
+            "FIJI": "FIJI",
+            "FINLAND": "FINLAND",
+            "FRANCE": "FRANCE",
+            "FRENCH GUIANA": "FRENCH GUIANA",
+            "FRENCH POLYNESIA": "FRENCH POLYNESIA",
+            "FRENCH SOUTHERN TERRITORIES": "FRENCH SOUTHERN TERRITORIES",
+            "GABON": "GABON",
+            "GAMBIA": "GAMBIA",
+            "GEORGIA": "GEORGIA",
+            "GERMANY": "GERMANY",
+            "GHANA": "GHANA",
+            "GIBRALTAR": "GIBRALTAR",
+            "GREECE": "GREECE",
+            "GREENLAND": "GREENLAND",
+            "GRENADA": "GRENADA",
+            "GUADELOUPE": "GUADELOUPE",
+            "GUAM": "GUAM",
+            "GUATEMALA": "GUATEMALA",
+            "GUERNSEY": "GUERNSEY",
+            "GUINEA": "GUINEA",
+            "GUINEA-BISSAU": "GUINEA-BISSAU",
+            "GUYANA": "GUYANA",
+            "HAITI": "HAITI",
+            "HEARD ISLAND AND MCDONALD ISLANDS": "HEARD ISLAND AND MCDONALD ISLANDS",
+            "HOLY SEE": "HOLY SEE",
+            "HONDURAS": "HONDURAS",
+            "HONG KONG": "HONG KONG",
+            "HUNGARY": "HUNGARY",
+            "ICELAND": "ICELAND",
+            "INDIA": "INDIA",
+            "INDONESIA": "INDONESIA",
+            "IRAN (ISLAMIC REPUBLIC OF)": "IRAN (ISLAMIC REPUBLIC OF)",
+            "IRAQ": "IRAQ",
+            "IRELAND": "IRELAND",
+            "ISLE OF MAN": "ISLE OF MAN",
+            "ISRAEL": "ISRAEL",
+            "ITALY": "ITALY",
+            "JAMAICA": "JAMAICA",
+            "JAPAN": "JAPAN",
+            "JERSEY": "JERSEY",
+            "JORDAN": "JORDAN",
+            "KAZAKHSTAN": "KAZAKHSTAN",
+            "KENYA": "KENYA",
+            "KIRIBATI": "KIRIBATI",
+            "KOREA (DEMOCRATIC PEOPLE'S REPUBLIC OF)": "KOREA (DEMOCRATIC PEOPLE'S REPUBLIC OF)",
+            "KOREA (REPUBLIC OF)": "KOREA (REPUBLIC OF)",
+            "KUWAIT": "KUWAIT",
+            "KYRGYZSTAN": "KYRGYZSTAN",
+            "LAO PEOPLE'S DEMOCRATIC REPUBLIC": "LAO PEOPLE'S DEMOCRATIC REPUBLIC",
+            "LATVIA": "LATVIA",
+            "LEBANON": "LEBANON",
+            "LESOTHO": "LESOTHO",
+            "LIBERIA": "LIBERIA",
+            "LIBYA": "LIBYA",
+            "LIECHTENSTEIN": "LIECHTENSTEIN",
+            "LITHUANIA": "LITHUANIA",
+            "LUXEMBOURG": "LUXEMBOURG",
+            "MACAO": "MACAO",
+            "MACEDONIA (THE FORMER YUGOSLAV REPUBLIC OF)": "MACEDONIA (THE FORMER YUGOSLAV REPUBLIC OF)",
+            "MADAGASCAR": "MADAGASCAR",
+            "MALAWI": "MALAWI",
+            "MALAYSIA": "MALAYSIA",
+            "MALDIVES": "MALDIVES",
+            "MALI": "MALI",
+            "MALTA": "MALTA",
+            "MARSHALL ISLANDS": "MARSHALL ISLANDS",
+            "MARTINIQUE": "MARTINIQUE",
+            "MAURITANIA": "MAURITANIA",
+            "MAURITIUS": "MAURITIUS",
+            "MAYOTTE": "MAYOTTE",
+            "MEXICO": "MEXICO",
+            "MICRONESIA (FEDERATED STATES OF)": "MICRONESIA (FEDERATED STATES OF)",
+            "MOLDOVA (REPUBLIC OF)": "MOLDOVA (REPUBLIC OF)",
+            "MONACO": "MONACO",
+            "MONGOLIA": "MONGOLIA",
+            "MONTENEGRO": "MONTENEGRO",
+            "MONTSERRAT": "MONTSERRAT",
+            "MOROCCO": "MOROCCO",
+            "MOZAMBIQUE": "MOZAMBIQUE",
+            "MYANMAR": "MYANMAR",
+            "NAMIBIA": "NAMIBIA",
+            "NAURU": "NAURU",
+            "NEPAL": "NEPAL",
+            "NETHERLANDS": "NETHERLANDS",
+            "NEW CALEDONIA": "NEW CALEDONIA",
+            "NEW ZEALAND": "NEW ZEALAND",
+            "NICARAGUA": "NICARAGUA",
+            "NIGER": "NIGER",
+            "NIGERIA": "NIGERIA",
+            "NIUE": "NIUE",
+            "NORFOLK ISLAND": "NORFOLK ISLAND",
+            "NORTHERN MARIANA ISLANDS": "NORTHERN MARIANA ISLANDS",
+            "NORWAY": "NORWAY",
+            "OMAN": "OMAN",
+            "PAKISTAN": "PAKISTAN",
+            "PALAU": "PALAU",
+            "PALESTINE, STATE OF": "PALESTINE, STATE OF",
+            "PANAMA": "PANAMA",
+            "PAPUA NEW GUINEA": "PAPUA NEW GUINEA",
+            "PARAGUAY": "PARAGUAY",
+            "PERU": "PERU",
+            "PITCAIRN": "PITCAIRN",
+            "POLAND": "POLAND",
+            "PORTUGAL": "PORTUGAL",
+            "PUERTO RICO": "PUERTO RICO",
+            "QATAR": "QATAR",
+            "REPUBLIC OF KOSOVO": "REPUBLIC OF KOSOVO",
+            "RéUNION": "RéUNION",
+            "ROMANIA": "ROMANIA",
+            "RUSSIAN FEDERATION": "RUSSIAN FEDERATION",
+            "RWANDA": "RWANDA",
+            "SAINT BARTHéLEMY": "SAINT BARTHéLEMY",
+            "SAINT HELENA, ASCENSION AND TRISTAN DA CUNHA": "SAINT HELENA, ASCENSION AND TRISTAN DA CUNHA",
+            "SAINT KITTS AND NEVIS": "SAINT KITTS AND NEVIS",
+            "SAINT LUCIA": "SAINT LUCIA",
+            "SAINT MARTIN (FRENCH PART)": "SAINT MARTIN (FRENCH PART)",
+            "SAINT PIERRE AND MIQUELON": "SAINT PIERRE AND MIQUELON",
+            "SAINT VINCENT AND THE GRENADINES": "SAINT VINCENT AND THE GRENADINES",
+            "SAMOA": "SAMOA",
+            "SAN MARINO": "SAN MARINO",
+            "SAO TOME AND PRINCIPE": "SAO TOME AND PRINCIPE",
+            "SAUDI ARABIA": "SAUDI ARABIA",
+            "SENEGAL": "SENEGAL",
+            "SERBIA": "SERBIA",
+            "SEYCHELLES": "SEYCHELLES",
+            "SIERRA LEONE": "SIERRA LEONE",
+            "SINGAPORE": "SINGAPORE",
+            "SINT MAARTEN (DUTCH PART)": "SINT MAARTEN (DUTCH PART)",
+            "SLOVAKIA": "SLOVAKIA",
+            "SLOVENIA": "SLOVENIA",
+            "SOLOMON ISLANDS": "SOLOMON ISLANDS",
+            "SOMALIA": "SOMALIA",
+            "SOUTH AFRICA": "SOUTH AFRICA",
+            "SOUTH GEORGIA AND THE SOUTH SANDWICH ISLANDS": "SOUTH GEORGIA AND THE SOUTH SANDWICH ISLANDS",
+            "SOUTH SUDAN": "SOUTH SUDAN",
+            "SPAIN": "SPAIN",
+            "SRI LANKA": "SRI LANKA",
+            "SUDAN": "SUDAN",
+            "SURINAME": "SURINAME",
+            "SVALBARD AND JAN MAYEN": "SVALBARD AND JAN MAYEN",
+            "SWAZILAND": "SWAZILAND",
+            "SWEDEN": "SWEDEN",
+            "SWITZERLAND": "SWITZERLAND",
+            "SYRIAN ARAB REPUBLIC": "SYRIAN ARAB REPUBLIC",
+            "TAIWAN": "TAIWAN",
+            "TAJIKISTAN": "TAJIKISTAN",
+            "TANZANIA, UNITED REPUBLIC OF": "TANZANIA, UNITED REPUBLIC OF",
+            "THAILAND": "THAILAND",
+            "TIMOR-LESTE": "TIMOR-LESTE",
+            "TOGO": "TOGO",
+            "TOKELAU": "TOKELAU",
+            "TONGA": "TONGA",
+            "TRINIDAD AND TOBAGO": "TRINIDAD AND TOBAGO",
+            "TUNISIA": "TUNISIA",
+            "TURKEY": "TURKEY",
+            "TURKMENISTAN": "TURKMENISTAN",
+            "TURKS AND CAICOS ISLANDS": "TURKS AND CAICOS ISLANDS",
+            "TUVALU": "TUVALU",
+            "UGANDA": "UGANDA",
+            "UKRAINE": "UKRAINE",
+            "UNITED ARAB EMIRATES": "UNITED ARAB EMIRATES",
+            "UNITED KINGDOM OF GREAT BRITAIN AND NORTHERN IRELAND": "UNITED KINGDOM OF GREAT BRITAIN AND NORTHERN IRELAND",
+            "UNITED STATES MINOR OUTLYING ISLANDS": "UNITED STATES MINOR OUTLYING ISLANDS",
+            "UNITED STATES OF AMERICA": "UNITED STATES OF AMERICA",
+            "URUGUAY": "URUGUAY",
+            "UZBEKISTAN": "UZBEKISTAN",
+            "VANUATU": "VANUATU",
+            "VENEZUELA (BOLIVARIAN REPUBLIC OF)": "VENEZUELA (BOLIVARIAN REPUBLIC OF)",
+            "VIET NAM": "VIET NAM",
+            "VIRGIN ISLANDS (BRITISH)": "VIRGIN ISLANDS (BRITISH)",
+            "VIRGIN ISLANDS (U.S.)": "VIRGIN ISLANDS (U.S.)",
+            "WALLIS AND FUTUNA": "WALLIS AND FUTUNA",
+            "WESTERN SAHARA": "WESTERN SAHARA",
+            "YEMEN": "YEMEN",
+            "ZAMBIA": "ZAMBIA",
+            "ZIMBABWE": "ZIMBABWE"
+        }
+    },
+    {
+        "name": "looking_for_work",
+        "label": "Looking For Work",
+        "property": {
+            "type": "radio",
+            "sub_type": null,
+            "required": false,
+            "readonly": false,
+            "custom_attr": null,
+            "others": null
+        },
+        "display": {
+            "grid": "2",
+            "first": false,
+            "break": false,
+            "group_class": "peso all-type",
+            "field_class": null
+        },
+        "value": null,
+        "option": [
+            "YES",
+            "NO"
+        ]
+    },
+    {
+        "name": "lfw_how_long",
+        "label": "How Long",
+        "property": {
+            "type": "text",
+            "sub_type": null,
+            "required": false,
+            "readonly": false,
+            "custom_attr": null,
+            "others": null
+        },
+        "display": {
+            "grid": "3",
+            "first": false,
+            "break": false,
+            "group_class": "peso all-type",
+            "field_class": "rate-only"
+        },
+        "value": null,
+        "option": null
+    },
+    {
+        "name": "lincense",
+        "label": "Eligibility / Professional Lincense",
+        "property": {
+            "type": "select",
+            "sub_type": "",
+            "required": false,
+            "readonly": false,
+            "custom_attr": null,
+            "others": null
+        },
+        "display": {
+            "grid": "3",
+            "first": false,
+            "break": true,
+            "group_class": "peso all-type req",
+            "field_class": null
+        },
+        "value": null,
+        "option": {
+            "PRC LICENSE HOLDER": "PRC LICENSE HOLDER",
+            "CIVIL SERVICE-1ST LEVEL": "CIVIL SERVICE-1ST LEVEL",
+            "CIVIL SERVICE-2ND LEVEL": "CIVIL SERVICE-2ND LEVEL",
+            "OTHERS": "OTHERS",
+            "NONE": "NONE"
+        }
+    },
+    {
+        "name": "job_preference",
+        "label": "Job Preference",
+        "property": {
+            "type": "html",
+            "sub_type": "json",
+            "required": false,
+            "readonly": false,
+            "custom_attr": null,
+            "others": null
+        },
+        "display": {
+            "grid": "12",
+            "first": true,
+            "break": true,
+            "group_class": "peso all-type",
+            "field_class": null
+        },
+        "value": null,
+        "option": "<!-- DEBUG-VIEW START 3 ROOTPATH//novusoft/include/individual/view/job_preference.php -->\n<div class=\"\">\r\n    <div class=\"table-responsive\">\r\n    <table class=\"table table-bordered mb-none\">\r\n        <thead>\r\n            <tr>\r\n                <th>Action</th>\r\n                <th>Occupation</th>\r\n                <th>Location</th>\r\n            </tr>\r\n        </thead>\r\n        <tbody>\r\n                        <tr class=\"main-tr\">\r\n                <td>\r\n                    <button type=\"button\" class=\"mb-xs mt-xs mr-xs btn btn-default add-row\">Add</button>\r\n                </td>\r\n                <td>\r\n                    <input class=\"form-control\" type=\"text\" name=\"job_preference[occupation][]\" value=\"\">\r\n                </td>\r\n                <td>\r\n                    <input class=\"form-control\" type=\"text\" name=\"job_preference[location][]\" value=\"\">\r\n                </td>\r\n            </tr>\r\n                    </tbody>\r\n    </table>\r\n    </div>\r\n</div>\n<!-- DEBUG-VIEW ENDED 3 ROOTPATH//novusoft/include/individual/view/job_preference.php -->\n"
+    },
+    {
+        "name": "work_experience",
+        "label": "Work Experience",
+        "property": {
+            "type": "html",
+            "sub_type": "json",
+            "required": false,
+            "readonly": false,
+            "custom_attr": null,
+            "others": null
+        },
+        "display": {
+            "grid": "12",
+            "first": true,
+            "break": true,
+            "group_class": "peso all-type",
+            "field_class": null
+        },
+        "value": null,
+        "option": "<!-- DEBUG-VIEW START 4 ROOTPATH//novusoft/include/individual/view/work_experience.php -->\n<div class=\"\">\n    <div class=\"table-responsive\">\n    <table class=\"table table-bordered mb-none\">\n        <thead>\n            <tr>\n                <th>Action</th>\n                <th>Status</th>\n                <th>Company Name</th>\n                <th>Address</th>\n                <th>Position</th>\n                <th>Start Date</th>\n                <th>End Date</th>\n                <th>Status</th>\n            </tr>\n        </thead>\n        <tbody>\n                        <tr class=\"main-tr\">\n                <td>\n                    <button type=\"button\" class=\"mb-xs mt-xs mr-xs btn btn-default add-row\">Add</button>\n                </td>\n                <td>\n                    <select class=\"form-control firstfld\" name=\"work_experience[status][]\">\n                        <option value=\"\">SELECT</option>\n                        <option value=\"PERMANENT\" >PERMANENT</option>\n                        <option value=\"CASUAL\" >CASUAL</option>\n                        <option value=\"CONTRACTUAL WORK\" >CONTRACTUAL WORK</option>\n                        <option value=\"INDIVIDUALLY OWNED BUSINESS\" >INDIVIDUALLY OWNED BUSINESS</option>\n                        <option value=\"SHARED/PARTNERSHIP BUSINESS\" >SHARED/PARTNERSHIP BUSINESS</option>\n                        <option value=\"CORPORATE BUSINESS\" >CORPORATE BUSINESS</option>\n                    </select>\n                </td>\n                <td>\n                    <input class=\"form-control\" type=\"text\" name=\"work_experience[company_name][]\" value=\"\">\n                </td>\n                <td>\n                    <input class=\"form-control\" type=\"text\" name=\"work_experience[address][]\" value=\"\">\n                </td>\n                <td>\n                    <input class=\"form-control\" type=\"text\" name=\"work_experience[position][]\" value=\"\">\n                </td>\n                <td>\n                    <input class=\"form-control\" type=\"text\" name=\"work_experience[start_date][]\" value=\"\" data-provide='datepicker' data-date-format='mm/dd/yyyy' data-date-autoclose='true' placeholder='MM/DD/YYYY' data-plugin-masked-input data-input-mask='99/99/9999'>\n                </td>\n                 <td>\n                    <input class=\"form-control\" type=\"text\" name=\"work_experience[end_date][]\" value=\"\" data-provide='datepicker' data-date-format='mm/dd/yyyy' data-date-autoclose='true' placeholder='MM/DD/YYYY' data-plugin-masked-input data-input-mask='99/99/9999'>\n                </td>\n                <!--<td>\n                    <input class=\"form-control\" type=\"text\" name=\"work_experience[status][]\" value=\"\">\n                </td>-->\n            </tr>\n                    </tbody>\n    </table>\n    </div>\n</div>\n<!-- DEBUG-VIEW ENDED 4 ROOTPATH//novusoft/include/individual/view/work_experience.php -->\n"
+    },
+    {
+        "name": "other_skills",
+        "label": "Other Skills",
+        "property": {
+            "type": "select",
+            "sub_type": "tags",
+            "required": false,
+            "readonly": false,
+            "custom_attr": [
+                "multiple"
+            ],
+            "others": null
+        },
+        "display": {
+            "grid": "12",
+            "first": true,
+            "break": true,
+            "group_class": "peso all-type",
+            "field_class": "select-tags-insert"
+        },
+        "value": null,
+        "option": {
+            "REFRIGERATION AAND AIRCONDITIONING": "REFRIGERATION AAND AIRCONDITIONING",
+            "AUTOMOTIVE/HEAVY EQUIMENT SERVICING": "AUTOMOTIVE/HEAVY EQUIMENT SERVICING",
+            "METAL WORKS": "METAL WORKS",
+            "BUILDING WIRING INSTALLATION": "BUILDING WIRING INSTALLATION",
+            "HEAVY EQUIPMENT OPERATION": "HEAVY EQUIPMENT OPERATION",
+            "PLUMBING": "PLUMBING",
+            "WELDING": "WELDING",
+            "CARPENTRY": "CARPENTRY",
+            "BAKING": "BAKING",
+            "DRESSMAKING": "DRESSMAKING",
+            "LINGUIST": "LINGUIST",
+            "COMPUTER GRAPHICS": "COMPUTER GRAPHICS",
+            "PAINTING": "PAINTING",
+            "BEAUTY CARE": "BEAUTY CARE",
+            "COMMERCIAL COOKING": "COMMERCIAL COOKING",
+            "HOUSEKEEPING": "HOUSEKEEPING",
+            "MASSAGE THERAPY": "MASSAGE THERAPY",
+            "OHTERS": "OHTERS"
+        }
+    },
+    {
+        "name": null,
+        "label": "<label><input type=\"checkbox\" class=\"form-control\" name=\"benefits[]\" value=\"chad\">Culture and Heritage Affairs Office(CHAD)</label>",
+        "property": {
+            "type": "label",
+            "sub_type": null,
+            "required": false,
+            "readonly": false,
+            "custom_attr": null,
+            "others": null
+        },
+        "display": {
+            "grid": "12",
+            "first": true,
+            "break": true,
+            "group_class": "",
+            "field_class": null
+        },
+        "value": null,
+        "option": null
+    },
+    {
+        "name": "indigeneous_person",
+        "label": "Indigeneous Person",
+        "property": {
+            "type": "select",
+            "sub_type": "",
+            "required": false,
+            "readonly": false,
+            "custom_attr": null,
+            "others": null
+        },
+        "display": {
+            "grid": "3",
+            "first": true,
+            "break": false,
+            "group_class": "chad all-type req",
+            "field_class": null
+        },
+        "value": null,
+        "option": {
+            "MANOBO": "MANOBO",
+            "HIGAONON": "HIGAONON",
+            "BANWAON": "BANWAON",
+            "MAMANUA": "MAMANUA",
+            "TALAANDIG": "TALAANDIG",
+            "OTHERS": "OTHERS"
+        }
+    },
+    {
+        "name": "certificate_ind",
+        "label": "Cert of Confirmation from NCIP/Cert No.",
+        "property": {
+            "type": "text",
+            "sub_type": null,
+            "required": false,
+            "readonly": false,
+            "custom_attr": null,
+            "others": null
+        },
+        "display": {
+            "grid": "3",
+            "first": false,
+            "break": false,
+            "group_class": "chad all-type req",
+            "field_class": ""
+        },
+        "value": null,
+        "option": null
+    },
+    {
+        "name": "year_migragtion",
+        "label": "Year on Butuan",
+        "property": {
+            "type": "text",
+            "sub_type": null,
+            "required": false,
+            "readonly": false,
+            "custom_attr": null,
+            "others": null
+        },
+        "display": {
+            "grid": "3",
+            "first": false,
+            "break": false,
+            "group_class": "chad all-type req",
+            "field_class": "number-only"
+        },
+        "value": null,
+        "option": null
+    },
+    {
+        "name": "origin_place",
+        "label": "Place Of Origin\r\n",
+        "property": {
+            "type": "text",
+            "sub_type": null,
+            "required": false,
+            "readonly": false,
+            "custom_attr": null,
+            "others": null
+        },
+        "display": {
+            "grid": "3",
+            "first": false,
+            "break": true,
+            "group_class": "chad all-type req",
+            "field_class": ""
+        },
+        "value": null,
+        "option": null
+    },
+    {
+        "name": null,
+        "label": "<label><input type=\"checkbox\" class=\"form-control\" name=\"benefits[]\" value=\"civil-registration\">Civil Registration</label>",
+        "property": {
+            "type": "label",
+            "sub_type": null,
+            "required": false,
+            "readonly": false,
+            "custom_attr": null,
+            "others": null
+        },
+        "display": {
+            "grid": "12",
+            "first": true,
+            "break": true,
+            "group_class": "",
+            "field_class": null
+        },
+        "value": null,
+        "option": null
+    },
+    {
+        "name": "marriage_cert",
+        "label": "Marriage Certificate",
+        "property": {
+            "type": "text",
+            "sub_type": null,
+            "required": false,
+            "readonly": false,
+            "custom_attr": null,
+            "others": null
+        },
+        "display": {
+            "grid": "6",
+            "first": true,
+            "break": false,
+            "group_class": "civil-registration all-type",
+            "field_class": null
+        },
+        "value": null,
+        "option": null
+    },
+    {
+        "name": "marriage_cert_photo",
+        "label": "",
+        "property": {
+            "type": "html",
+            "sub_type": "",
+            "required": false,
+            "readonly": false,
+            "custom_attr": null,
+            "others": null
+        },
+        "display": {
+            "grid": "6",
+            "first": false,
+            "break": true,
+            "group_class": "civil-registration all-type req",
+            "field_class": null
+        },
+        "value": null,
+        "option": null
+    },
+    {
+        "name": null,
+        "label": "<label><input type=\"checkbox\" class=\"form-control\" name=\"benefits[]\" value=\"cho\">City Health Office (CHO)</label>",
+        "property": {
+            "type": "label",
+            "sub_type": null,
+            "required": false,
+            "readonly": false,
+            "custom_attr": null,
+            "others": null
+        },
+        "display": {
+            "grid": "12",
+            "first": true,
+            "break": true,
+            "group_class": "",
+            "field_class": null
+        },
+        "value": null,
+        "option": null
+    },
+    {
+        "name": "blood_type",
+        "label": "Blood Type",
+        "property": {
+            "type": "select",
+            "sub_type": null,
+            "required": false,
+            "readonly": false,
+            "custom_attr": null,
+            "others": null
+        },
+        "display": {
+            "grid": "3",
+            "first": true,
+            "break": false,
+            "group_class": "cho all-type req",
+            "field_class": null
+        },
+        "value": null,
+        "option": {
+            "A+": "A+",
+            "A-": "A-",
+            "O+": "O+",
+            "O-": "O-",
+            "B+": "B+",
+            "B-": "B-",
+            "AB+": "AB+",
+            "AB-": "AB-",
+            "UNKNOWN": "UNKNOWN"
+        }
+    },
+    {
+        "name": "health_condition",
+        "label": "Health Condition",
+        "property": {
+            "type": "select",
+            "sub_type": "",
+            "required": false,
+            "readonly": false,
+            "custom_attr": null,
+            "others": null
+        },
+        "display": {
+            "grid": "9",
+            "first": false,
+            "break": true,
+            "group_class": "cho all-type req",
+            "field_class": null
+        },
+        "value": null,
+        "option": {
+            "HEALTHY": "HEALTHY",
+            "SICKY/FRAIL": "SICKY/FRAIL",
+            "BEDRIDDEN/DISABLED": "BEDRIDDEN/DISABLED"
+        }
+    },
+    {
+        "name": "pwd",
+        "label": "PWD",
+        "property": {
+            "type": "radio",
+            "sub_type": null,
+            "required": false,
+            "readonly": false,
+            "custom_attr": null,
+            "others": null
+        },
+        "display": {
+            "grid": "4",
+            "first": true,
+            "break": false,
+            "group_class": "cho all-type req",
+            "field_class": null
+        },
+        "value": null,
+        "option": [
+            "YES",
+            "NO"
+        ]
+    },
+    {
+        "name": "disability_type",
+        "label": "Type Of Disability",
+        "property": {
+            "type": "select",
+            "sub_type": "",
+            "required": false,
+            "readonly": false,
+            "custom_attr": null,
+            "others": null
+        },
+        "display": {
+            "grid": "4",
+            "first": false,
+            "break": false,
+            "group_class": "cho all-type",
+            "field_class": null
+        },
+        "value": null,
+        "option": {
+            "VISUAL": "VISUAL",
+            "HEARING": "HEARING",
+            "SPEECH": "SPEECH",
+            "PHYSICAL": "PHYSICAL",
+            "OTHERS": "OTHERS"
+        }
+    },
+    {
+        "name": "pwd_id",
+        "label": "PWD ID",
+        "property": {
+            "type": "text",
+            "sub_type": null,
+            "required": false,
+            "readonly": false,
+            "custom_attr": null,
+            "others": null
+        },
+        "display": {
+            "grid": "4",
+            "first": false,
+            "break": true,
+            "group_class": "cho all-type",
+            "field_class": null
+        },
+        "value": null,
+        "option": null
+    },
+    {
+        "name": "ptb",
+        "label": "Do you have a PTB (Pulmonary Tuberculosis)?",
+        "property": {
+            "type": "radio",
+            "sub_type": null,
+            "required": false,
+            "readonly": false,
+            "custom_attr": null,
+            "others": null
+        },
+        "display": {
+            "grid": "4",
+            "first": true,
+            "break": false,
+            "group_class": "cho all-type req",
+            "field_class": null
+        },
+        "value": null,
+        "option": [
+            "YES",
+            "NO"
+        ]
+    },
+    {
+        "name": "ptb_treatment",
+        "label": "Have you undergone any treatment?",
+        "property": {
+            "type": "radio",
+            "sub_type": null,
+            "required": false,
+            "readonly": false,
+            "custom_attr": null,
+            "others": null
+        },
+        "display": {
+            "grid": "4",
+            "first": false,
+            "break": false,
+            "group_class": "cho hide-f ptb-treat",
+            "field_class": null
+        },
+        "value": null,
+        "option": [
+            "YES",
+            "NO"
+        ]
+    },
+    {
+        "name": "immunization_record",
+        "label": "Records on Immunization\r\n",
+        "property": {
+            "type": "select",
+            "sub_type": "tags",
+            "required": false,
+            "readonly": false,
+            "custom_attr": [
+                "multiple"
+            ],
+            "others": null
+        },
+        "display": {
+            "grid": "4",
+            "first": false,
+            "break": true,
+            "group_class": "cho all-type req",
+            "field_class": "select-tags-insert"
+        },
+        "value": null,
+        "option": {
+            "NA": "NA"
+        }
+    },
+    {
+        "name": "covid_vac_1",
+        "label": "Covid Vaccine 1st Dose",
+        "property": {
+            "type": "radio",
+            "sub_type": null,
+            "required": false,
+            "readonly": false,
+            "custom_attr": null,
+            "others": null
+        },
+        "display": {
+            "grid": "4",
+            "first": true,
+            "break": false,
+            "group_class": "cho all-type req",
+            "field_class": null
+        },
+        "value": null,
+        "option": [
+            "YES",
+            "NO"
+        ]
+    },
+    {
+        "name": "covid_vac_date_1",
+        "label": "Covid Vaccine 1st Dose, Date\r\n",
+        "property": {
+            "type": "text",
+            "sub_type": "date",
+            "required": false,
+            "readonly": false,
+            "custom_attr": [
+                "data-provide='datepicker'",
+                "data-date-format='mm/yyyy'",
+                "data-date-autoclose='true'",
+                "placeholder='MM/YYYY'",
+                "data-plugin-masked-input",
+                "data-input-mask='99/9999'"
+            ],
+            "others": null
+        },
+        "display": {
+            "grid": "4",
+            "first": false,
+            "break": false,
+            "group_class": "cho hide-f dose-1",
+            "field_class": ""
+        },
+        "value": null,
+        "option": null
+    },
+    {
+        "name": "covid_vac_hf_1",
+        "label": "Covid Vaccine 1st Dose, Health Facility",
+        "property": {
+            "type": "text",
+            "sub_type": null,
+            "required": false,
+            "readonly": false,
+            "custom_attr": null,
+            "others": null
+        },
+        "display": {
+            "grid": "4",
+            "first": false,
+            "break": true,
+            "group_class": "cho hide-f dose-1",
+            "field_class": null
+        },
+        "value": null,
+        "option": null
+    },
+    {
+        "name": "covid_vac_2",
+        "label": "Covid Vaccine 2nd Dose",
+        "property": {
+            "type": "radio",
+            "sub_type": null,
+            "required": false,
+            "readonly": false,
+            "custom_attr": null,
+            "others": null
+        },
+        "display": {
+            "grid": "4",
+            "first": true,
+            "break": false,
+            "group_class": "cho all-type req",
+            "field_class": null
+        },
+        "value": null,
+        "option": [
+            "YES",
+            "NO"
+        ]
+    },
+    {
+        "name": "covid_vac_date_2",
+        "label": "Covid Vaccine 2nd Dose, Date",
+        "property": {
+            "type": "text",
+            "sub_type": "date",
+            "required": false,
+            "readonly": false,
+            "custom_attr": [
+                "data-provide='datepicker'",
+                "data-date-format='mm/yyyy'",
+                "data-date-autoclose='true'",
+                "placeholder='MM/YYYY'",
+                "data-plugin-masked-input",
+                "data-input-mask='99/9999'"
+            ],
+            "others": null
+        },
+        "display": {
+            "grid": "4",
+            "first": false,
+            "break": false,
+            "group_class": "cho hide-f dose-2",
+            "field_class": ""
+        },
+        "value": null,
+        "option": null
+    },
+    {
+        "name": "covid_vac_hf_2",
+        "label": "Covid Vaccine 2nd Dose, Health Facility",
+        "property": {
+            "type": "text",
+            "sub_type": null,
+            "required": false,
+            "readonly": false,
+            "custom_attr": null,
+            "others": null
+        },
+        "display": {
+            "grid": "4",
+            "first": false,
+            "break": true,
+            "group_class": "cho hide-f dose-2",
+            "field_class": null
+        },
+        "value": null,
+        "option": null
+    },
+    {
+        "name": "place_delivery",
+        "label": "Place of Delivery",
+        "property": {
+            "type": "select",
+            "sub_type": "",
+            "required": false,
+            "readonly": false,
+            "custom_attr": null,
+            "others": null
+        },
+        "display": {
+            "grid": "3",
+            "first": true,
+            "break": false,
+            "group_class": "cho all-type",
+            "field_class": null
+        },
+        "value": null,
+        "option": {
+            "PUBLIC HOSPITAL": "PUBLIC HOSPITAL",
+            "PRIVATE HOSPITAL": "PRIVATE HOSPITAL",
+            "LYING-IN CLINIC": "LYING-IN CLINIC",
+            "HOME": "HOME",
+            "OTHERS": "OTHERS"
+        }
+    },
+    {
+        "name": "birth_attendant",
+        "label": "Birth Attendant",
+        "property": {
+            "type": "select",
+            "sub_type": "",
+            "required": false,
+            "readonly": false,
+            "custom_attr": null,
+            "others": null
+        },
+        "display": {
+            "grid": "3",
+            "first": false,
+            "break": false,
+            "group_class": "cho all-type",
+            "field_class": ""
+        },
+        "value": null,
+        "option": {
+            "DOCTOR": "DOCTOR",
+            "NURSE": "NURSE",
+            "MIDWIFE": "MIDWIFE",
+            "HILOT": "HILOT",
+            "OTHERS": "OTHERS"
+        }
+    },
+    {
+        "name": "how_many_preg",
+        "label": "How many pregnancies",
+        "property": {
+            "type": "text",
+            "sub_type": null,
+            "required": false,
+            "readonly": false,
+            "custom_attr": null,
+            "others": null
+        },
+        "display": {
+            "grid": "3",
+            "first": false,
+            "break": false,
+            "group_class": "cho all-type",
+            "field_class": null
+        },
+        "value": null,
+        "option": null
+    },
+    {
+        "name": "how_many_living_children",
+        "label": "How many living children",
+        "property": {
+            "type": "text",
+            "sub_type": null,
+            "required": false,
+            "readonly": false,
+            "custom_attr": null,
+            "others": null
+        },
+        "display": {
+            "grid": "3",
+            "first": false,
+            "break": true,
+            "group_class": "cho all-type",
+            "field_class": null
+        },
+        "value": null,
+        "option": null
+    },
+    {
+        "name": "family_plan",
+        "label": "Family Planning Methods",
+        "property": {
+            "type": "select",
+            "sub_type": "tags",
+            "required": false,
+            "readonly": false,
+            "custom_attr": [
+                "multiple"
+            ],
+            "others": null
+        },
+        "display": {
+            "grid": "3",
+            "first": true,
+            "break": false,
+            "group_class": "cho all-type",
+            "field_class": "select-tags-insert"
+        },
+        "value": null,
+        "option": {
+            "FEMALE STERILIZATION/LIGATION": "FEMALE STERILIZATION/LIGATION",
+            "MALE STERILIZATION/VASECTOMY": "MALE STERILIZATION/VASECTOMY",
+            "IUD": "IUD",
+            "INJECTABLES": "INJECTABLES",
+            "IMPLATS": "IMPLATS",
+            "PILL": "PILL",
+            "CONDOM": "CONDOM",
+            "MODERN NATURAL": "MODERN NATURAL",
+            "LACTATIONAL AMENORRHEA METHOD (LAM)": "LACTATIONAL AMENORRHEA METHOD (LAM)",
+            "TRADITIONAL": "TRADITIONAL"
+        }
+    },
+    {
+        "name": "source_fp",
+        "label": "Source of FP",
+        "property": {
+            "type": "select",
+            "sub_type": "",
+            "required": false,
+            "readonly": false,
+            "custom_attr": null,
+            "others": null
+        },
+        "display": {
+            "grid": "3",
+            "first": false,
+            "break": false,
+            "group_class": "cho all-type",
+            "field_class": ""
+        },
+        "value": null,
+        "option": {
+            "GOVERMENT HOSPITAL": "GOVERMENT HOSPITAL",
+            "RHU/HEALTH CENTER": "RHU/HEALTH CENTER",
+            "BRGY HEALTH STATION": "BRGY HEALTH STATION",
+            "PRIVATE HOSPITAL": "PRIVATE HOSPITAL",
+            "PHARMACY": "PHARMACY",
+            "OTHERS": "OTHERS"
+        }
+    },
+    {
+        "name": "intension_fp",
+        "label": "Intension of FP\r\n",
+        "property": {
+            "type": "text",
+            "sub_type": null,
+            "required": false,
+            "readonly": false,
+            "custom_attr": null,
+            "others": null
+        },
+        "display": {
+            "grid": "3",
+            "first": false,
+            "break": false,
+            "group_class": "cho all-type",
+            "field_class": null
+        },
+        "value": null,
+        "option": null
+    },
+    {
+        "name": "malnourished",
+        "label": "Malnourished\r\n",
+        "property": {
+            "type": "radio",
+            "sub_type": null,
+            "required": false,
+            "readonly": false,
+            "custom_attr": null,
+            "others": null
+        },
+        "display": {
+            "grid": "3",
+            "first": false,
+            "break": true,
+            "group_class": "cho all-type req",
+            "field_class": null
+        },
+        "value": null,
+        "option": [
+            "YES",
+            "NO"
+        ]
+    },
+    {
+        "name": null,
+        "label": "<label><input type=\"checkbox\" class=\"form-control\" name=\"benefits[]\" value=\"bmc\">Butuan Medical Center (BMC)</label>",
+        "property": {
+            "type": "label",
+            "sub_type": null,
+            "required": false,
+            "readonly": false,
+            "custom_attr": null,
+            "others": null
+        },
+        "display": {
+            "grid": "12",
+            "first": true,
+            "break": true,
+            "group_class": "",
+            "field_class": null
+        },
+        "value": null,
+        "option": null
+    },
+    {
+        "name": "bmc_patient",
+        "label": "BMC Patient\r\n",
+        "property": {
+            "type": "radio",
+            "sub_type": null,
+            "required": false,
+            "readonly": false,
+            "custom_attr": null,
+            "others": null
+        },
+        "display": {
+            "grid": "4",
+            "first": true,
+            "break": false,
+            "group_class": "bmc all-type req",
+            "field_class": null
+        },
+        "value": null,
+        "option": [
+            "YES",
+            "NO"
+        ]
+    },
+    {
+        "name": "ph_member",
+        "label": "Health Insurance",
+        "property": {
+            "type": "select",
+            "sub_type": "",
+            "required": false,
+            "readonly": false,
+            "custom_attr": null,
+            "others": null
+        },
+        "display": {
+            "grid": "4",
+            "first": false,
+            "break": false,
+            "group_class": "bmc all-type req",
+            "field_class": null
+        },
+        "value": null,
+        "option": {
+            "PHILHEALTH PAYING MEMBER": "PHILHEALTH PAYING MEMBER",
+            "PHILHEALTH DEPENDENT OF PAYING MEMBER": "PHILHEALTH DEPENDENT OF PAYING MEMBER",
+            "PHILHEALTH INDIGENT MEMBER": "PHILHEALTH INDIGENT MEMBER",
+            "PHILHEALTH DEPENDENT OF INDIGENT MEMBER": "PHILHEALTH DEPENDENT OF INDIGENT MEMBER",
+            "GSIS": "GSIS",
+            "SSS": "SSS",
+            "PRIVATE/HMO": "PRIVATE/HMO",
+            "NON-MEMBER": "NON-MEMBER"
+        }
+    },
+    {
+        "name": "phic_id",
+        "label": "PHIC/Health Insurance ID",
+        "property": {
+            "type": "text",
+            "sub_type": null,
+            "required": false,
+            "readonly": false,
+            "custom_attr": null,
+            "others": null
+        },
+        "display": {
+            "grid": "4",
+            "first": false,
+            "break": true,
+            "group_class": "bmc hide-f phid-id",
+            "field_class": null
+        },
+        "value": null,
+        "option": null
+    },
+    {
+        "name": "hmo",
+        "label": "HMO",
+        "property": {
+            "type": "text",
+            "sub_type": null,
+            "required": false,
+            "readonly": false,
+            "custom_attr": null,
+            "others": null
+        },
+        "display": {
+            "grid": "3",
+            "first": true,
+            "break": false,
+            "group_class": "bmc all-type",
+            "field_class": null
+        },
+        "value": null,
+        "option": null
+    },
+    {
+        "name": "life_plan",
+        "label": "Life Plan",
+        "property": {
+            "type": "text",
+            "sub_type": null,
+            "required": false,
+            "readonly": false,
+            "custom_attr": null,
+            "others": null
+        },
+        "display": {
+            "grid": "3",
+            "first": false,
+            "break": false,
+            "group_class": "bmc all-type",
+            "field_class": null
+        },
+        "value": null,
+        "option": null
+    },
+    {
+        "name": "facility_visited",
+        "label": "Facility Visited",
+        "property": {
+            "type": "select",
+            "sub_type": "",
+            "required": false,
+            "readonly": false,
+            "custom_attr": null,
+            "others": null
+        },
+        "display": {
+            "grid": "3",
+            "first": false,
+            "break": false,
+            "group_class": "bmc all-type",
+            "field_class": null
+        },
+        "value": null,
+        "option": {
+            "GOVERMENT HOSPITAL": "GOVERMENT HOSPITAL",
+            "RHU/HEALTH CENTER": "RHU/HEALTH CENTER",
+            "BRGY HEALTH STATION": "BRGY HEALTH STATION",
+            "PRIVATE HOSPITAL": "PRIVATE HOSPITAL",
+            "PRIVATE CLINIC": "PRIVATE CLINIC",
+            "PHARMACY": "PHARMACY",
+            "HILOT/HERBALIST": "HILOT/HERBALIST",
+            "OTHERS": "OTHERS"
+        }
+    },
+    {
+        "name": "reason_visited",
+        "label": "Reason Visited",
+        "property": {
+            "type": "select",
+            "sub_type": "",
+            "required": false,
+            "readonly": false,
+            "custom_attr": null,
+            "others": null
+        },
+        "display": {
+            "grid": "3",
+            "first": false,
+            "break": true,
+            "group_class": "bmc all-type",
+            "field_class": null
+        },
+        "value": null,
+        "option": {
+            "SICK/INJURED": "SICK/INJURED",
+            "PRENATA/POSTNATAL": "PRENATA/POSTNATAL",
+            "GAVE BIRTH": "GAVE BIRTH",
+            "DENTAL": "DENTAL",
+            "MEDICAL CHECK-UP": "MEDICAL CHECK-UP",
+            "MEDICAL REQUIREMENT": "MEDICAL REQUIREMENT",
+            "NHTS/CCT/4PS REQUIREMENT": "NHTS/CCT/4PS REQUIREMENT",
+            "OTHERS": "OTHERS"
+        }
+    },
+    {
+        "name": null,
+        "label": "<label><input type=\"checkbox\" class=\"form-control\" name=\"benefits[]\" value=\"city-housing\">City Housing</label>",
+        "property": {
+            "type": "label",
+            "sub_type": null,
+            "required": false,
+            "readonly": false,
+            "custom_attr": null,
+            "others": null
+        },
+        "display": {
+            "grid": "12",
+            "first": true,
+            "break": true,
+            "group_class": "",
+            "field_class": null
+        },
+        "value": null,
+        "option": null
+    },
+    {
+        "name": "voters_comelec",
+        "label": "Voters ID/ Comelec Cert",
+        "property": {
+            "type": "text",
+            "sub_type": null,
+            "required": false,
+            "readonly": false,
+            "custom_attr": null,
+            "others": null
+        },
+        "display": {
+            "grid": "4",
+            "first": true,
+            "break": false,
+            "group_class": "city-housing all-type",
+            "field_class": null
+        },
+        "value": null,
+        "option": null
+    },
+    {
+        "name": "residency_date",
+        "label": "Residency Date",
+        "property": {
+            "type": "text",
+            "sub_type": "date",
+            "required": false,
+            "readonly": false,
+            "custom_attr": [
+                "data-provide='datepicker'",
+                "data-date-format='mm/yyyy'",
+                "data-date-autoclose='true'",
+                "placeholder='MM/YYYY'",
+                "data-plugin-masked-input",
+                "data-input-mask='99/9999'"
+            ],
+            "others": null
+        },
+        "display": {
+            "grid": "4",
+            "first": false,
+            "break": false,
+            "group_class": "city-housing all-type req",
+            "field_class": ""
+        },
+        "value": null,
+        "option": null
+    },
+    {
+        "name": "prioritization_criterion",
+        "label": "Prioritization Criterion\r\n",
+        "property": {
+            "type": "select",
+            "sub_type": null,
+            "required": false,
+            "readonly": false,
+            "custom_attr": null,
+            "others": null
+        },
+        "display": {
+            "grid": "4",
+            "first": false,
+            "break": true,
+            "group_class": "city-housing all-type req",
+            "field_class": "select2-init"
+        },
+        "value": null,
+        "option": {
+            "FIRE": "FIRE",
+            "DEMOLITION": "DEMOLITION",
+            "EVICTION": "EVICTION",
+            "SOLO PARENT": "SOLO PARENT",
+            "AFFECTED BY GOVT PROJECTS": "AFFECTED BY GOVT PROJECTS",
+            "LANDLES WITH CERT FROM ASSESSOR": "LANDLES WITH CERT FROM ASSESSOR"
+        }
+    },
+    {
+        "name": "never_been_lot_awarded",
+        "label": "Never Been Lot Awarded\r\n",
+        "property": {
+            "type": "radio",
+            "sub_type": null,
+            "required": false,
+            "readonly": false,
+            "custom_attr": null,
+            "others": null
+        },
+        "display": {
+            "grid": "4",
+            "first": true,
+            "break": false,
+            "group_class": "city-housing all-type req",
+            "field_class": null
+        },
+        "value": null,
+        "option": [
+            "YES",
+            "NO"
+        ]
+    },
+    {
+        "name": "block_no",
+        "label": "Block No.",
+        "property": {
+            "type": "text",
+            "sub_type": null,
+            "required": false,
+            "readonly": false,
+            "custom_attr": null,
+            "others": null
+        },
+        "display": {
+            "grid": "4",
+            "first": false,
+            "break": false,
+            "group_class": "city-housing hide-f never-been-lot",
+            "field_class": "number-only"
+        },
+        "value": null,
+        "option": null
+    },
+    {
+        "name": "lot_no",
+        "label": "Lot No.",
+        "property": {
+            "type": "text",
+            "sub_type": null,
+            "required": false,
+            "readonly": false,
+            "custom_attr": null,
+            "others": null
+        },
+        "display": {
+            "grid": "4",
+            "first": false,
+            "break": true,
+            "group_class": "city-housing hide-f never-been-lot",
+            "field_class": "number-only"
+        },
+        "value": null,
+        "option": null
+    },
+    {
+        "name": "brgy_registered",
+        "label": "Brgy Registered",
+        "property": {
+            "type": "text",
+            "sub_type": null,
+            "required": false,
+            "readonly": false,
+            "custom_attr": null,
+            "others": null
+        },
+        "display": {
+            "grid": "4",
+            "first": true,
+            "break": false,
+            "group_class": "city-housing all-type",
+            "field_class": ""
+        },
+        "value": null,
+        "option": null
+    },
+    {
+        "name": "resident_type",
+        "label": "Type of Resident",
+        "property": {
+            "type": "select",
+            "sub_type": null,
+            "required": false,
+            "readonly": false,
+            "custom_attr": null,
+            "others": null
+        },
+        "display": {
+            "grid": "4",
+            "first": false,
+            "break": false,
+            "group_class": "city-housing all-type",
+            "field_class": ""
+        },
+        "value": null,
+        "option": {
+            "NON-MIGRANT": "NON-MIGRANT",
+            "MIGRANT": "MIGRANT",
+            "TRANSCIENT": "TRANSCIENT"
+        }
+    },
+    {
+        "name": "brgy_registered",
+        "label": "Previous resident",
+        "property": {
+            "type": "text",
+            "sub_type": null,
+            "required": false,
+            "readonly": false,
+            "custom_attr": null,
+            "others": null
+        },
+        "display": {
+            "grid": "4",
+            "first": false,
+            "break": true,
+            "group_class": "city-housing all-type",
+            "field_class": ""
+        },
+        "value": null,
+        "option": null
+    },
+    {
+        "name": "reason_for_leaving",
+        "label": "Reason for leaving previous resident ",
+        "property": {
+            "type": "select",
+            "sub_type": null,
+            "required": false,
+            "readonly": false,
+            "custom_attr": null,
+            "others": null
+        },
+        "display": {
+            "grid": "3",
+            "first": true,
+            "break": false,
+            "group_class": "city-housing all-type",
+            "field_class": ""
+        },
+        "value": null,
+        "option": {
+            "LACK OF EMPLOYMENT": "LACK OF EMPLOYMENT",
+            "PERCEPTION OF BETTER INCOME IN OTHER PLACE": "PERCEPTION OF BETTER INCOME IN OTHER PLACE",
+            "SCHOOLING": "SCHOOLING",
+            "PRECENSE OF RELATIVES AND FRIENDS IN OTHER PLACES": "PRECENSE OF RELATIVES AND FRIENDS IN OTHER PLACES",
+            "EMPLOYMENT / JOB RELOCATON": "EMPLOYMENT / JOB RELOCATON",
+            "DISASTER-RELATED RELOCATION": "DISASTER-RELATED RELOCATION",
+            "RETIREMENT": "RETIREMENT",
+            "TO LIVE WITH PARENTS": "TO LIVE WITH PARENTS",
+            "TO LIVE WTH CHILDREN": "TO LIVE WTH CHILDREN",
+            "MARRIAGE": "MARRIAGE",
+            "ANNULMENT": "ANNULMENT",
+            "SEPARATION": "SEPARATION",
+            "COMMUTING-RELATED REASONS": "COMMUTING-RELATED REASONS",
+            "HEALTH-RELATED REASONS": "HEALTH-RELATED REASONS",
+            "PEACE AND SECURITY": "PEACE AND SECURITY",
+            "OTHERS": "OTHERS"
+        }
+    },
+    {
+        "name": "return_prev_resident",
+        "label": "Return to previous resident ",
+        "property": {
+            "type": "text",
+            "sub_type": null,
+            "required": false,
+            "readonly": false,
+            "custom_attr": null,
+            "others": null
+        },
+        "display": {
+            "grid": "3",
+            "first": false,
+            "break": false,
+            "group_class": "city-housing all-type",
+            "field_class": ""
+        },
+        "value": null,
+        "option": null
+    },
+    {
+        "name": "reason_transfer",
+        "label": "Reason for transfering in this brgy",
+        "property": {
+            "type": "select",
+            "sub_type": null,
+            "required": false,
+            "readonly": false,
+            "custom_attr": null,
+            "others": null
+        },
+        "display": {
+            "grid": "3",
+            "first": false,
+            "break": false,
+            "group_class": "city-housing all-type",
+            "field_class": ""
+        },
+        "value": null,
+        "option": {
+            "AVAILABILITY OF JOBS": "AVAILABILITY OF JOBS",
+            "HIGHER WAGE": "HIGHER WAGE",
+            "PRESENCE OF SCHOOLS AND UNIVERSITIES": "PRESENCE OF SCHOOLS AND UNIVERSITIES",
+            "PRESENCE OF RELATIVES AND FRIENDS IN OTHER PLACE": "PRESENCE OF RELATIVES AND FRIENDS IN OTHER PLACE",
+            "HOUSING": "HOUSING",
+            "OTHERS": "OTHERS"
+        }
+    },
+    {
+        "name": "duration_stay_current_brgy",
+        "label": "Duration of stay in current brgy",
+        "property": {
+            "type": "text",
+            "sub_type": null,
+            "required": false,
+            "readonly": false,
+            "custom_attr": null,
+            "others": null
+        },
+        "display": {
+            "grid": "3",
+            "first": false,
+            "break": true,
+            "group_class": "city-housing all-type",
+            "field_class": ""
+        },
+        "value": null,
+        "option": null
+    },
+    {
+        "name": null,
+        "label": "<label><input type=\"checkbox\" class=\"form-control\" name=\"benefits[]\" value=\"obo\">Office of the City Building Officials (OBO)</label>",
+        "property": {
+            "type": "label",
+            "sub_type": null,
+            "required": false,
+            "readonly": false,
+            "custom_attr": null,
+            "others": null
+        },
+        "display": {
+            "grid": "12",
+            "first": true,
+            "break": true,
+            "group_class": "",
+            "field_class": null
+        },
+        "value": null,
+        "option": null
+    },
+    {
+        "name": "ibp_no",
+        "label": "Indigenous Bldg Permit No",
+        "property": {
+            "type": "text",
+            "sub_type": null,
+            "required": false,
+            "readonly": false,
+            "custom_attr": null,
+            "others": null
+        },
+        "display": {
+            "grid": "6",
+            "first": true,
+            "break": false,
+            "group_class": "obo all-type req",
+            "field_class": null
+        },
+        "value": null,
+        "option": null
+    },
+    {
+        "name": "ibp_date",
+        "label": "Indigenous Bldg Permit No, Date Issued\r\n",
+        "property": {
+            "type": "text",
+            "sub_type": "date",
+            "required": false,
+            "readonly": false,
+            "custom_attr": [
+                "data-provide='datepicker'",
+                "data-date-format='mm/yyyy'",
+                "data-date-autoclose='true'",
+                "placeholder='MM/YYYY'",
+                "data-plugin-masked-input",
+                "data-input-mask='99/9999'"
+            ],
+            "others": null
+        },
+        "display": {
+            "grid": "6",
+            "first": false,
+            "break": true,
+            "group_class": "obo all-type req",
+            "field_class": ""
+        },
+        "value": null,
+        "option": null
+    },
+    {
+        "name": "sbp_no",
+        "label": "Standard Bldg Permit No",
+        "property": {
+            "type": "text",
+            "sub_type": null,
+            "required": false,
+            "readonly": false,
+            "custom_attr": null,
+            "others": null
+        },
+        "display": {
+            "grid": "6",
+            "first": true,
+            "break": false,
+            "group_class": "obo all-type req",
+            "field_class": null
+        },
+        "value": null,
+        "option": null
+    },
+    {
+        "name": "sbp_date",
+        "label": "Standard Bldg Permit No, Date Issued",
+        "property": {
+            "type": "text",
+            "sub_type": "date",
+            "required": false,
+            "readonly": false,
+            "custom_attr": [
+                "data-provide='datepicker'",
+                "data-date-format='mm/yyyy'",
+                "data-date-autoclose='true'",
+                "placeholder='MM/YYYY'",
+                "data-plugin-masked-input",
+                "data-input-mask='99/9999'"
+            ],
+            "others": null
+        },
+        "display": {
+            "grid": "6",
+            "first": false,
+            "break": true,
+            "group_class": "obo all-type req",
+            "field_class": ""
+        },
+        "value": null,
+        "option": null
+    },
+    {
+        "name": null,
+        "label": "<label><input type=\"checkbox\" class=\"form-control\" name=\"benefits[]\" value=\"crdd\">City Disaster Risk Reduction Management Office (CDRRMO)</label>",
+        "property": {
+            "type": "label",
+            "sub_type": null,
+            "required": false,
+            "readonly": false,
+            "custom_attr": null,
+            "others": null
+        },
+        "display": {
+            "grid": "12",
+            "first": true,
+            "break": true,
+            "group_class": "",
+            "field_class": null
+        },
+        "value": null,
+        "option": null
+    },
+    {
+        "name": "bdrrm_training",
+        "label": "Attended the BDRRM Training",
+        "property": {
+            "type": "radio",
+            "sub_type": null,
+            "required": false,
+            "readonly": false,
+            "custom_attr": null,
+            "others": null
+        },
+        "display": {
+            "grid": "4",
+            "first": true,
+            "break": false,
+            "group_class": "crdd all-type req",
+            "field_class": null
+        },
+        "value": null,
+        "option": [
+            "YES",
+            "NO"
+        ]
+    },
+    {
+        "name": "type_training",
+        "label": "If Yes, Type Of training",
+        "property": {
+            "type": "select",
+            "sub_type": "",
+            "required": false,
+            "readonly": false,
+            "custom_attr": null,
+            "others": null
+        },
+        "display": {
+            "grid": "4",
+            "first": false,
+            "break": false,
+            "group_class": "crdd hide-f train",
+            "field_class": null
+        },
+        "value": null,
+        "option": {
+            "CAMP MANAGEMENT": "CAMP MANAGEMENT",
+            "DISASTER PREPAREDNESS": "DISASTER PREPAREDNESS"
+        }
+    },
+    {
+        "name": "potential_volunteer",
+        "label": "If Yes, Potential Volunteer",
+        "property": {
+            "type": "radio",
+            "sub_type": null,
+            "required": false,
+            "readonly": false,
+            "custom_attr": null,
+            "others": null
+        },
+        "display": {
+            "grid": "4",
+            "first": false,
+            "break": true,
+            "group_class": "crdd hide-f train",
+            "field_class": null
+        },
+        "value": null,
+        "option": [
+            "YES",
+            "NO"
+        ]
+    },
+    {
+        "name": null,
+        "label": "<label><input type=\"checkbox\" class=\"form-control\" name=\"benefits[]\" value=\"bpld\">Business Permits and Licensing Division (BPLD)</label>",
+        "property": {
+            "type": "label",
+            "sub_type": null,
+            "required": false,
+            "readonly": false,
+            "custom_attr": null,
+            "others": null
+        },
+        "display": {
+            "grid": "12",
+            "first": true,
+            "break": true,
+            "group_class": "",
+            "field_class": null
+        },
+        "value": null,
+        "option": null
+    },
+    {
+        "name": "business_name",
+        "label": "Business Name",
+        "property": {
+            "type": "text",
+            "sub_type": null,
+            "required": false,
+            "readonly": false,
+            "custom_attr": null,
+            "others": null
+        },
+        "display": {
+            "grid": "3",
+            "first": true,
+            "break": false,
+            "group_class": "bpld all-type req",
+            "field_class": ""
+        },
+        "value": null,
+        "option": null
+    },
+    {
+        "name": "no_employees",
+        "label": "No of Employees",
+        "property": {
+            "type": "text",
+            "sub_type": null,
+            "required": false,
+            "readonly": false,
+            "custom_attr": null,
+            "others": null
+        },
+        "display": {
+            "grid": "3",
+            "first": false,
+            "break": false,
+            "group_class": "bpld all-type req",
+            "field_class": "number-only"
+        },
+        "value": null,
+        "option": null
+    },
+    {
+        "name": "capitalization",
+        "label": "Capitalization",
+        "property": {
+            "type": "text",
+            "sub_type": null,
+            "required": false,
+            "readonly": false,
+            "custom_attr": null,
+            "others": null
+        },
+        "display": {
+            "grid": "3",
+            "first": false,
+            "break": false,
+            "group_class": "bpld all-type req",
+            "field_class": "number-only"
+        },
+        "value": null,
+        "option": null
+    },
+    {
+        "name": "bmbe_member",
+        "label": "BMBE Member",
+        "property": {
+            "type": "radio",
+            "sub_type": null,
+            "required": false,
+            "readonly": false,
+            "custom_attr": null,
+            "others": null
+        },
+        "display": {
+            "grid": "3",
+            "first": false,
+            "break": true,
+            "group_class": "bpld all-type req",
+            "field_class": null
+        },
+        "value": null,
+        "option": [
+            "YES",
+            "NO"
+        ]
+    },
+    {
+        "name": "list_registered_motor",
+        "label": "",
+        "property": {
+            "type": "html",
+            "sub_type": "json",
+            "required": false,
+            "readonly": false,
+            "custom_attr": null,
+            "others": null
+        },
+        "display": {
+            "grid": "12",
+            "first": true,
+            "break": true,
+            "group_class": "bpld all-type req",
+            "field_class": null
+        },
+        "value": null,
+        "option": "<!-- DEBUG-VIEW START 6 ROOTPATH//novusoft/include/individual/view/list_registered_motor.php -->\n<div class=\"\">\n    <div class=\"table-responsive\">\n    <table class=\"table table-bordered mb-none\">\n        <thead>\n            <tr>\n                <th>Action</th>\n                <th>Type</th>\n                <th>Qty</th>\n                <th>LTFRB</th>\n                <th>BPLD</th>\n            </tr>\n        </thead>\n        <tbody>\n                        <tr class=\"main-tr\">\n                <td>\n                    <button type=\"button\" class=\"mb-xs mt-xs mr-xs btn btn-default add-row\">Add</button>\n                </td>\n                <td>\n                    <select class=\"form-control\" name=\"list_registered_motor[type][]\">\n                        <option value=\"TRICYCLE\" >TRICYCLE</option>\n                        <option value=\"PEDICAB\" >PEDICAB</option>\n                        <option value=\"MULTICAB\" >MULTICAB</option>\n                        <option value=\"VAN\" >VAN</option>\n                    </select>\n                </td>\n                <td>\n                    <input class=\"form-control\" type=\"text\" name=\"list_registered_motor[qty][]\" value=\"\">\n                </td>\n                 <td>\n                    <input class=\"form-control\" type=\"text\" name=\"list_registered_motor[ltfrb][]\" value=\"\">\n                </td>\n                 <td>\n                    <input class=\"form-control\" type=\"text\" name=\"list_registered_motor[bpld][]\" value=\"\">\n                </td>\n            </tr>\n                    </tbody>\n    </table>\n    </div>\n</div>\n<!-- DEBUG-VIEW ENDED 6 ROOTPATH//novusoft/include/individual/view/list_registered_motor.php -->\n"
+    },
+    {
+        "name": null,
+        "label": "<label><input type=\"checkbox\" class=\"form-control\" name=\"benefits[]\" value=\"city-agri\">CITY AGRI</label>",
+        "property": {
+            "type": "label",
+            "sub_type": null,
+            "required": false,
+            "readonly": false,
+            "custom_attr": null,
+            "others": null
+        },
+        "display": {
+            "grid": "12",
+            "first": true,
+            "break": true,
+            "group_class": "",
+            "field_class": null
+        },
+        "value": null,
+        "option": null
+    },
+    {
+        "name": "reg_no",
+        "label": "Reg No/Farmers Code",
+        "property": {
+            "type": "text",
+            "sub_type": null,
+            "required": false,
+            "readonly": false,
+            "custom_attr": null,
+            "others": null
+        },
+        "display": {
+            "grid": "8",
+            "first": false,
+            "break": false,
+            "group_class": "city-agri hide-f rsbsa",
+            "field_class": ""
+        },
+        "value": null,
+        "option": null
+    },
+    {
+        "name": "reg_rsbsa",
+        "label": "Registered with RSBSA",
+        "property": {
+            "type": "radio",
+            "sub_type": null,
+            "required": false,
+            "readonly": false,
+            "custom_attr": null,
+            "others": null
+        },
+        "display": {
+            "grid": "2",
+            "first": true,
+            "break": false,
+            "group_class": "city-agri all-type req",
+            "field_class": null
+        },
+        "value": null,
+        "option": [
+            "YES",
+            "NO"
+        ]
+    },
+    {
+        "name": "land_area",
+        "label": "Total Agricultural Land Area (sq m)",
+        "property": {
+            "type": "text",
+            "sub_type": null,
+            "required": false,
+            "readonly": false,
+            "custom_attr": null,
+            "others": null
+        },
+        "display": {
+            "grid": "2",
+            "first": false,
+            "break": true,
+            "group_class": "city-agri hide-f rsbsa",
+            "field_class": "number-only"
+        },
+        "value": null,
+        "option": null
+    },
+    {
+        "name": "crops_type",
+        "label": "Types Of Crops",
+        "property": {
+            "type": "select",
+            "sub_type": "tags",
+            "required": false,
+            "readonly": false,
+            "custom_attr": [
+                "multiple"
+            ],
+            "others": null
+        },
+        "display": {
+            "grid": "12",
+            "first": true,
+            "break": true,
+            "group_class": "city-agri all-type req",
+            "field_class": "select-tags-insert"
+        },
+        "value": null,
+        "option": {
+            "RICE": "RICE",
+            "FRUITS": "FRUITS",
+            "VEGETABLES": "VEGETABLES"
+        }
+    },
+    {
+        "name": "livestock_onwer",
+        "label": "Livestock Onwer\r\n",
+        "property": {
+            "type": "radio",
+            "sub_type": null,
+            "required": false,
+            "readonly": false,
+            "custom_attr": null,
+            "others": null
+        },
+        "display": {
+            "grid": "3",
+            "first": true,
+            "break": false,
+            "group_class": "city-agri all-type req",
+            "field_class": null
+        },
+        "value": null,
+        "option": [
+            "YES",
+            "NO"
+        ]
+    },
+    {
+        "name": "livestock_type",
+        "label": "Livestock Type",
+        "property": {
+            "type": "radio",
+            "sub_type": null,
+            "required": false,
+            "readonly": false,
+            "custom_attr": null,
+            "others": null
+        },
+        "display": {
+            "grid": "3",
+            "first": false,
+            "break": false,
+            "group_class": "city-agri hide-f",
+            "field_class": null
+        },
+        "value": null,
+        "option": [
+            "COMMERCIAL",
+            "BACKYEARD"
+        ]
+    },
+    {
+        "name": "livestock_cattle",
+        "label": "Ownership of livestock and cattle (for large cows, horse, carabaos)",
+        "property": {
+            "type": "radio",
+            "sub_type": null,
+            "required": false,
+            "readonly": false,
+            "custom_attr": null,
+            "others": null
+        },
+        "display": {
+            "grid": "3",
+            "first": false,
+            "break": false,
+            "group_class": "city-agri all-type req",
+            "field_class": null
+        },
+        "value": null,
+        "option": [
+            "YES",
+            "NO"
+        ]
+    },
+    {
+        "name": "ownership_no",
+        "label": "Cert of Ownership No",
+        "property": {
+            "type": "text",
+            "sub_type": null,
+            "required": false,
+            "readonly": false,
+            "custom_attr": null,
+            "others": null
+        },
+        "display": {
+            "grid": "3",
+            "first": false,
+            "break": true,
+            "group_class": "city-agri hide-f",
+            "field_class": ""
+        },
+        "value": null,
+        "option": null
+    },
+    {
+        "name": "animal_list",
+        "label": "Animal List",
+        "property": {
+            "type": "html",
+            "sub_type": "json",
+            "required": false,
+            "readonly": false,
+            "custom_attr": null,
+            "others": null
+        },
+        "display": {
+            "grid": "12",
+            "first": true,
+            "break": true,
+            "group_class": "city-agri all-type req",
+            "field_class": null
+        },
+        "value": null,
+        "option": "<!-- DEBUG-VIEW START 5 ROOTPATH//novusoft/include/individual/view/animal_list.php -->\n<div class=\"\">\n    <div class=\"table-responsive\">\n    <table class=\"table table-bordered mb-none\">\n        <thead>\n            <tr>\n                <th rowspan=\"2\" align=\"center\">Action</th>\n                <th rowspan=\"2\">Type</th>\n                <th rowspan=\"2\">Kind</th>\n                <th rowspan=\"2\">Variant</th>\n                <th colspan=\"2\">Owned</th>\n                <th colspan=\"2\">Breader</th>\n            </tr>\n            <tr>\n                <th>Male</th>\n                <th>Female</th>\n                <th>Male</th>\n                <th>Female</th>\n            </tr>\n        </thead>\n        <tbody>\n                        <tr class=\"main-tr\">\n                <td>\n                    <button type=\"button\" class=\"mb-xs mt-xs mr-xs btn btn-default add-row\">Add</button>\n                </td>\n                \n                <td>\n                    <select class=\"form-control animal-type\" name=\"animal_list[type][]\">\n                        <option value=\"\">SELECT</option>\n                        <option value=\"LARGE\" >LARGE</option>\n                        <option value=\"SMALL\" >SMALL</option>\n                    </select>\n                </td>\n                \n                <td>\n                    <select class=\"form-control select-tags-insert animal-kind\" type=\"text\" name=\"animal_list[kind][]\" >\n                                                                                            </select>\n                </td>\n                <td>\n                    <select class=\"form-control select-tags-insert animal-variant\" name=\"animal_list[variant][]\">\n                                                                        \n                                            </select>\n                </td>\n                <td>\n                    <input class=\"form-control\" type=\"text\" name=\"animal_list[male_o][]\" value=\"\">\n                </td>\n                <td>\n                    <input class=\"form-control\" type=\"text\" name=\"animal_list[female_o][]\" value=\"\">\n                </td>\n                <td>\n                    <input class=\"form-control\" type=\"text\" name=\"animal_list[male_b][]\" value=\"\">\n                </td>\n                <td>\n                    <input class=\"form-control\" type=\"text\" name=\"animal_list[female_b][]\" value=\"\">\n                </td>\n            </tr>\n                    </tbody>\n    </table>\n    </div>\n</div>\n<!-- DEBUG-VIEW ENDED 5 ROOTPATH//novusoft/include/individual/view/animal_list.php -->\n"
+    },
+    {
+        "name": null,
+        "label": "<label><input type=\"checkbox\" class=\"form-control\" name=\"benefits[]\" value=\"sap-main\">Social Ammilluration Program</label>",
+        "property": {
+            "type": "label",
+            "sub_type": null,
+            "required": false,
+            "readonly": false,
+            "custom_attr": null,
+            "others": null
+        },
+        "display": {
+            "grid": "12",
+            "first": true,
+            "break": true,
+            "group_class": "",
+            "field_class": null
+        },
+        "value": null,
+        "option": null
+    },
+    {
+        "name": "sap_bene",
+        "label": "SAP Beneficiary?",
+        "property": {
+            "type": "select",
+            "sub_type": "",
+            "required": false,
+            "readonly": false,
+            "custom_attr": null,
+            "others": null
+        },
+        "display": {
+            "grid": "4",
+            "first": true,
+            "break": true,
+            "group_class": "sap-main all-type req",
+            "field_class": null
+        },
+        "value": null,
+        "option": {
+            "sap": "SAP",
+            "sap-w": "SAP Waitlisted"
+        }
+    },
+    {
+        "name": "barcode_no",
+        "label": "Barcode",
+        "property": {
+            "type": "text",
+            "sub_type": null,
+            "required": false,
+            "readonly": false,
+            "custom_attr": null,
+            "others": null
+        },
+        "display": {
+            "grid": "6",
+            "first": true,
+            "break": false,
+            "group_class": "sap all-type",
+            "field_class": null
+        },
+        "value": null,
+        "option": null
+    },
+    {
+        "name": "captain_name",
+        "label": "Captain Name",
+        "property": {
+            "type": "text",
+            "sub_type": null,
+            "required": false,
+            "readonly": true,
+            "custom_attr": null,
+            "others": null
+        },
+        "display": {
+            "grid": "6",
+            "first": false,
+            "break": true,
+            "group_class": "sap all-type",
+            "field_class": null
+        },
+        "value": null,
+        "option": null
+    },
+    {
+        "name": "sector",
+        "label": "Sector",
+        "property": {
+            "type": "select",
+            "sub_type": "",
+            "required": false,
+            "readonly": false,
+            "custom_attr": null,
+            "others": null
+        },
+        "display": {
+            "grid": "4",
+            "first": true,
+            "break": false,
+            "group_class": "sap all-type",
+            "field_class": null
+        },
+        "value": null,
+        "option": {
+            "WALA SA PAGPIPILITAN": "WALA SA PAGPIPILITAN",
+            "NAKATATANDA": "NAKATATANDA"
+        }
+    },
+    {
+        "name": "id_type",
+        "label": "ID Type",
+        "property": {
+            "type": "select",
+            "sub_type": "",
+            "required": false,
+            "readonly": false,
+            "custom_attr": null,
+            "others": null
+        },
+        "display": {
+            "grid": "4",
+            "first": false,
+            "break": false,
+            "group_class": "sap all-type",
+            "field_class": null
+        },
+        "value": null,
+        "option": {
+            "SSS-UMID": "SSS-UMID",
+            "DRIVER LINCENSE": "DRIVER LINCENSE"
+        }
+    },
+    {
+        "name": "id_number",
+        "label": "ID Number",
+        "property": {
+            "type": "text",
+            "sub_type": null,
+            "required": false,
+            "readonly": false,
+            "custom_attr": null,
+            "others": null
+        },
+        "display": {
+            "grid": "4",
+            "first": false,
+            "break": true,
+            "group_class": "sap all-type",
+            "field_class": null
+        },
+        "value": null,
+        "option": null
+    },
+    {
+        "name": "lswdo_name",
+        "label": "LSWDO Name",
+        "property": {
+            "type": "text",
+            "sub_type": null,
+            "required": false,
+            "readonly": true,
+            "custom_attr": null,
+            "others": null
+        },
+        "display": {
+            "grid": "8",
+            "first": true,
+            "break": false,
+            "group_class": "sap all-type",
+            "field_class": null
+        },
+        "value": null,
+        "option": null
+    },
+    {
+        "name": "date_uploaded",
+        "label": "Date Uploaded",
+        "property": {
+            "type": "text",
+            "sub_type": "date",
+            "required": false,
+            "readonly": true,
+            "custom_attr": [
+                "data-provide='datepicker'",
+                "data-date-format='mm/dd/yyyy'",
+                "data-date-autoclose='true'",
+                "placeholder='MM/DD/YYYY'",
+                "data-plugin-masked-input",
+                "data-input-mask='99/99/9999'"
+            ],
+            "others": null
+        },
+        "display": {
+            "grid": "4",
+            "first": false,
+            "break": true,
+            "group_class": "sap all-type",
+            "field_class": ""
+        },
+        "value": null,
+        "option": null
+    },
+    {
+        "name": "barcode",
+        "label": "Barcode",
+        "property": {
+            "type": "text",
+            "sub_type": null,
+            "required": false,
+            "readonly": false,
+            "custom_attr": null,
+            "others": null
+        },
+        "display": {
+            "grid": "6",
+            "first": true,
+            "break": false,
+            "group_class": "sap-w all-type",
+            "field_class": null
+        },
+        "value": null,
+        "option": null
+    },
+    {
+        "name": "brgy",
+        "label": "Barangay",
+        "property": {
+            "type": "select",
+            "sub_type": null,
+            "required": false,
+            "readonly": false,
+            "custom_attr": null,
+            "others": null
+        },
+        "display": {
+            "grid": "6",
+            "first": false,
+            "break": true,
+            "group_class": "sap-w all-type",
+            "field_class": "select2-init"
+        },
+        "value": null,
+        "option": {
+            "AGAO POB. (BGY. 3)": "AGAO POB. (BGY. 3)",
+            "AGUSAN PEQUEÑO": "AGUSAN PEQUEÑO",
+            "AGUSAN PEQUEñO": "AGUSAN PEQUEñO",
+            "AMBAGO": "AMBAGO",
+            "AMPARO": "AMPARO",
+            "AMPAYON": "AMPAYON",
+            "ANTICALA": "ANTICALA",
+            "ANTONGALON": "ANTONGALON",
+            "AUPAGAN": "AUPAGAN",
+            "BAAN KM 3": "BAAN KM 3",
+            "BAAN RIVERSIDE POB. (BGY. 20)": "BAAN RIVERSIDE POB. (BGY. 20)",
+            "BABAG": "BABAG",
+            "BADING POB. (BGY. 22)": "BADING POB. (BGY. 22)",
+            "BANCASI": "BANCASI",
+            "BANZA": "BANZA",
+            "BAOBAOAN": "BAOBAOAN",
+            "BASAG": "BASAG",
+            "BAYANIHAN POB. (BGY. 27)": "BAYANIHAN POB. (BGY. 27)",
+            "BILAY": "BILAY",
+            "BIT-OS": "BIT-OS",
+            "BITAN-AGAN": "BITAN-AGAN",
+            "BOBON": "BOBON",
+            "BONBON": "BONBON",
+            "BUGABUS": "BUGABUS",
+            "BUGSUKAN": "BUGSUKAN",
+            "BUHANGIN POB. (BGY. 19)": "BUHANGIN POB. (BGY. 19)",
+            "CABCABON": "CABCABON",
+            "CAMAYAHAN": "CAMAYAHAN",
+            "DAGOHOY POB. (BGY. 7)": "DAGOHOY POB. (BGY. 7)",
+            "DANKIAS": "DANKIAS",
+            "DE ORO": "DE ORO",
+            "DIEGO SILANG POB. (BGY. 6)": "DIEGO SILANG POB. (BGY. 6)",
+            "DON FRANCISCO": "DON FRANCISCO",
+            "DOONGAN": "DOONGAN",
+            "DULAG": "DULAG",
+            "DUMALAGAN": "DUMALAGAN",
+            "FLORIDA": "FLORIDA",
+            "GOLDEN RIBBON POB. (BGY. 2)": "GOLDEN RIBBON POB. (BGY. 2)",
+            "HOLY REDEEMER POB. (BGY. 23)": "HOLY REDEEMER POB. (BGY. 23)",
+            "HUMABON POB. (BGY. 11)": "HUMABON POB. (BGY. 11)",
+            "IMADEJAS POB. (BGY. 24)": "IMADEJAS POB. (BGY. 24)",
+            "JOSE RIZAL POB. (BGY. 25)": "JOSE RIZAL POB. (BGY. 25)",
+            "KINAMLUTAN": "KINAMLUTAN",
+            "LAPU-LAPU POB. (BGY. 8)": "LAPU-LAPU POB. (BGY. 8)",
+            "LEMON": "LEMON",
+            "LEON KILAT POB. (BGY. 13)": "LEON KILAT POB. (BGY. 13)",
+            "LIBERTAD": "LIBERTAD",
+            "LIMAHA POB. (BGY. 14)": "LIMAHA POB. (BGY. 14)",
+            "LOS ANGELES": "LOS ANGELES",
+            "LUMBOCAN": "LUMBOCAN",
+            "MAGUINDA": "MAGUINDA",
+            "MAHAY": "MAHAY",
+            "MAHOGANY POB. (BGY. 21)": "MAHOGANY POB. (BGY. 21)",
+            "MAIBU": "MAIBU",
+            "MANDAMO": "MANDAMO",
+            "MANILA DE BUGABUS": "MANILA DE BUGABUS",
+            "MAON POB. (BGY. 1)": "MAON POB. (BGY. 1)",
+            "MASAO": "MASAO",
+            "MAUG": "MAUG",
+            "NEW SOCIETY VILLAGE POB. (BGY. 26)": "NEW SOCIETY VILLAGE POB. (BGY. 26)",
+            "NONG-NONG": "NONG-NONG",
+            "OBRERO POB. (BGY. 18)": "OBRERO POB. (BGY. 18)",
+            "ONG YIU POB. (BGY. 16)": "ONG YIU POB. (BGY. 16)",
+            "PAGATPATAN": "PAGATPATAN",
+            "PANGABUGAN": "PANGABUGAN",
+            "PIANING": "PIANING",
+            "PIGDAULAN": "PIGDAULAN",
+            "PINAMANCULAN": "PINAMANCULAN",
+            "PORT POYOHON POB. (BGY. 17 - NEW ASIA)": "PORT POYOHON POB. (BGY. 17 - NEW ASIA)",
+            "RAJAH SOLIMAN POB. (BGY. 4)": "RAJAH SOLIMAN POB. (BGY. 4)",
+            "SALVACION": "SALVACION",
+            "SAN IGNACIO POB. (BGY. 15)": "SAN IGNACIO POB. (BGY. 15)",
+            "SAN MATEO": "SAN MATEO",
+            "SAN VICENTE": "SAN VICENTE",
+            "SANTO NIñO": "SANTO NIñO",
+            "SANTO NIÑO": "SANTO NIÑO",
+            "SIKATUNA POB. (BGY. 10)": "SIKATUNA POB. (BGY. 10)",
+            "SILONGAN POB. (BGY. 5)": "SILONGAN POB. (BGY. 5)",
+            "SUMILE": "SUMILE",
+            "SUMILIHON": "SUMILIHON",
+            "TAGABACA": "TAGABACA",
+            "TAGUIBO": "TAGUIBO",
+            "TALIGAMAN": "TALIGAMAN",
+            "TANDANG SORA POB. (BGY. 12)": "TANDANG SORA POB. (BGY. 12)",
+            "TINIWISAN": "TINIWISAN",
+            "TUNGAO": "TUNGAO",
+            "URDUJA POB. (BGY. 9)": "URDUJA POB. (BGY. 9)",
+            "VILLA KANANGA": "VILLA KANANGA"
+        }
+    },
+    {
+        "name": "payment_mode",
+        "label": "Mode of Payment",
+        "property": {
+            "type": "select",
+            "sub_type": "",
+            "required": false,
+            "readonly": false,
+            "custom_attr": null,
+            "others": null
+        },
+        "display": {
+            "grid": "4",
+            "first": true,
+            "break": false,
+            "group_class": "sap-w all-type",
+            "field_class": null
+        },
+        "value": null,
+        "option": {
+            "SDO": "SDO"
+        }
+    },
+    {
+        "name": "amount",
+        "label": "Amount",
+        "property": {
+            "type": "text",
+            "sub_type": null,
+            "required": false,
+            "readonly": false,
+            "custom_attr": null,
+            "others": null
+        },
+        "display": {
+            "grid": "4",
+            "first": false,
+            "break": false,
+            "group_class": "sap-w all-type",
+            "field_class": "rate-only"
+        },
+        "value": null,
+        "option": null
+    },
+    {
+        "name": "sw_status",
+        "label": "Status",
+        "property": {
+            "type": "select",
+            "sub_type": "",
+            "required": false,
+            "readonly": false,
+            "custom_attr": null,
+            "others": null
+        },
+        "display": {
+            "grid": "4",
+            "first": false,
+            "break": true,
+            "group_class": "sap-w all-type",
+            "field_class": null
+        },
+        "value": null,
+        "option": {
+            "CLAIMED": "CLAIMED"
+        }
+    },
+    {
+        "name": null,
+        "label": "<label><input type=\"checkbox\" class=\"form-control\" name=\"benefits[]\" value=\"4ps\">4P's (Pantawid Pamilya Pilipino Program)</label>",
+        "property": {
+            "type": "label",
+            "sub_type": null,
+            "required": false,
+            "readonly": false,
+            "custom_attr": null,
+            "others": null
+        },
+        "display": {
+            "grid": "12",
+            "first": true,
+            "break": true,
+            "group_class": null,
+            "field_class": null
+        },
+        "value": null,
+        "option": null
+    },
+    {
+        "name": "4p_id",
+        "label": "Entry ID",
+        "property": {
+            "type": "text",
+            "sub_type": null,
+            "required": false,
+            "readonly": false,
+            "custom_attr": null,
+            "others": null
+        },
+        "display": {
+            "grid": "4",
+            "first": true,
+            "break": false,
+            "group_class": "4ps all-type req",
+            "field_class": null
+        },
+        "value": null,
+        "option": null
+    },
+    {
+        "name": "4p_cstatus",
+        "label": "Client Status",
+        "property": {
+            "type": "select",
+            "sub_type": "",
+            "required": false,
+            "readonly": false,
+            "custom_attr": null,
+            "others": null
+        },
+        "display": {
+            "grid": "4",
+            "first": false,
+            "break": false,
+            "group_class": "4ps all-type req",
+            "field_class": null
+        },
+        "value": null,
+        "option": {
+            "ACTIVE": "ACTIVE"
+        }
+    },
+    {
+        "name": "4p_mstatus",
+        "label": "Member Status",
+        "property": {
+            "type": "select",
+            "sub_type": "",
+            "required": false,
+            "readonly": false,
+            "custom_attr": null,
+            "others": null
+        },
+        "display": {
+            "grid": "4",
+            "first": false,
+            "break": true,
+            "group_class": "4ps all-type req",
+            "field_class": null
+        },
+        "value": null,
+        "option": {
+            "ACTIVE": "ACTIVE",
+            "DECEASED": "DECEASED",
+            "MOVED OUT": "MOVED OUT",
+            "WRONG ENTRY": "WRONG ENTRY"
+        }
+    },
+    {
+        "name": "reg_status",
+        "label": "Registration Status",
+        "property": {
+            "type": "radio",
+            "sub_type": null,
+            "required": false,
+            "readonly": false,
+            "custom_attr": null,
+            "others": null
+        },
+        "display": {
+            "grid": "3",
+            "first": true,
+            "break": false,
+            "group_class": "4ps all-type req",
+            "field_class": null
+        },
+        "value": null,
+        "option": [
+            "YES",
+            "NO"
+        ]
+    },
+    {
+        "name": "rel_hh",
+        "label": "Relationship",
+        "property": {
+            "type": "select",
+            "sub_type": "",
+            "required": false,
+            "readonly": false,
+            "custom_attr": null,
+            "others": null
+        },
+        "display": {
+            "grid": "4",
+            "first": false,
+            "break": false,
+            "group_class": "4ps all-type req",
+            "field_class": null
+        },
+        "value": null,
+        "option": {
+            "HEAD": "HEAD",
+            "SPOUSE": "SPOUSE",
+            "SON": "SON",
+            "DAUGHTER": "DAUGHTER",
+            "STEPSON": "STEPSON",
+            "STEPDAUGHTER": "STEPDAUGHTER",
+            "SON-IN-LAW": "SON-IN-LAW",
+            "DAUGHTER-IN-LAW": "DAUGHTER-IN-LAW",
+            "GRANDSON": "GRANDSON",
+            "GRANDDAUGHTER": "GRANDDAUGHTER",
+            "FATHER": "FATHER",
+            "MOTHER": "MOTHER",
+            "BROTHER": "BROTHER",
+            "SISTER": "SISTER",
+            "UNCLE": "UNCLE",
+            "AUNT": "AUNT",
+            "NEPHEW": "NEPHEW",
+            "NIECE": "NIECE",
+            "OTHER-RELATIVE": "OTHER-RELATIVE",
+            "NON-RELATIVE": "NON-RELATIVE",
+            "DOMESTIC-HELPER": "DOMESTIC-HELPER"
+        }
+    },
+    {
+        "name": "mother_maiden",
+        "label": "Mother's Maiden Name",
+        "property": {
+            "type": "text",
+            "sub_type": null,
+            "required": false,
+            "readonly": false,
+            "custom_attr": null,
+            "others": null
+        },
+        "display": {
+            "grid": "5",
+            "first": false,
+            "break": true,
+            "group_class": "4ps all-type req",
+            "field_class": null
+        },
+        "value": null,
+        "option": null
+    },
+    {
+        "name": "ip_aff",
+        "label": "IP Affiliation",
+        "property": {
+            "type": "text",
+            "sub_type": null,
+            "required": false,
+            "readonly": false,
+            "custom_attr": null,
+            "others": null
+        },
+        "display": {
+            "grid": "6",
+            "first": true,
+            "break": false,
+            "group_class": "4ps all-type req",
+            "field_class": null
+        },
+        "value": null,
+        "option": null
+    },
+    {
+        "name": "hh_set",
+        "label": "Household Set",
+        "property": {
+            "type": "text",
+            "sub_type": null,
+            "required": false,
+            "readonly": false,
+            "custom_attr": null,
+            "others": null
+        },
+        "display": {
+            "grid": "3",
+            "first": false,
+            "break": false,
+            "group_class": "4ps all-type req",
+            "field_class": "number-only"
+        },
+        "value": null,
+        "option": null
+    },
+    {
+        "name": "group",
+        "label": "Group",
+        "property": {
+            "type": "select",
+            "sub_type": null,
+            "required": false,
+            "readonly": false,
+            "custom_attr": null,
+            "others": null
+        },
+        "display": {
+            "grid": "3",
+            "first": false,
+            "break": true,
+            "group_class": "4ps all-type req",
+            "field_class": ""
+        },
+        "value": null,
+        "option": {
+            "SURVIVAL": "SURVIVAL",
+            "SUBSITENCE": "SUBSITENCE",
+            "SELF SUFICIENT": "SELF SUFICIENT"
+        }
+    },
+    {
+        "name": null,
+        "label": "<label><input type=\"checkbox\" class=\"form-control\" name=\"benefits[]\" value=\"osca\">Office of the Senior Citizen Affairs (OSCA)</label>",
+        "property": {
+            "type": "label",
+            "sub_type": null,
+            "required": false,
+            "readonly": false,
+            "custom_attr": null,
+            "others": null
+        },
+        "display": {
+            "grid": "12",
+            "first": true,
+            "break": true,
+            "group_class": "",
+            "field_class": null
+        },
+        "value": null,
+        "option": null
+    },
+    {
+        "name": "osca_id",
+        "label": "OSCA ID",
+        "property": {
+            "type": "text",
+            "sub_type": null,
+            "required": false,
+            "readonly": false,
+            "custom_attr": null,
+            "others": null
+        },
+        "display": {
+            "grid": "6",
+            "first": true,
+            "break": false,
+            "group_class": "osca all-type req",
+            "field_class": null
+        },
+        "value": null,
+        "option": null
+    },
+    {
+        "name": "osca_date_issue",
+        "label": "Date of Issuance",
+        "property": {
+            "type": "text",
+            "sub_type": "date",
+            "required": false,
+            "readonly": false,
+            "custom_attr": [
+                "data-provide='datepicker'",
+                "data-date-format='mm/dd/yyyy'",
+                "data-date-autoclose='true'",
+                "placeholder='MM/DD/YYYY'",
+                "data-plugin-masked-input",
+                "data-input-mask='99/99/9999'"
+            ],
+            "others": null
+        },
+        "display": {
+            "grid": "6",
+            "first": false,
+            "break": true,
+            "group_class": "osca all-type req",
+            "field_class": ""
+        },
+        "value": null,
+        "option": null
+    },
+    {
+        "name": "data_privacy",
+        "label": "",
+        "property": {
+            "type": "html",
+            "sub_type": "",
+            "required": false,
+            "readonly": false,
+            "custom_attr": null,
+            "others": null
+        },
+        "display": {
+            "grid": "12",
+            "first": true,
+            "break": true,
+            "group_class": "",
+            "field_class": null
+        },
+        "value": null,
+        "option": "<!-- DEBUG-VIEW START 8 ROOTPATH//novusoft/include/individual/view/data_privacy.php -->\n<div class=\"row mt-xlg ml-xlgmt-xlg ml-xlg\">\n    <div class=\"col-sm-12\">\n        <div class=\"img-responsive\">\n            <img src=\"\" width=\"200\" id=\"sign_image\" >\n            <input type=\"hidden\" name=\"signature_agree\" id=\"signature_agree\">\n        </div>\n    </div>\n</div>\n<div class=\"form-group ml-xl mt-sm\">\n    <label>\n        <input type=\"checkbox\" id=\"agree_dpc\" class=\"agree mr-sm\" name=\"agree\" value=\"1\" required ><a >Data Privacy Consent</a> Agreement\n    </label>\n    <div class=\"help-block with-errors\"></div>\n</div>\n<!-- DEBUG-VIEW ENDED 8 ROOTPATH//novusoft/include/individual/view/data_privacy.php -->\n"
+    }
+]
