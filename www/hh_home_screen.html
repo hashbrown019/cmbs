@@ -37,9 +37,9 @@
 					<span class="fa fa-plus"></span><br> Add
 				</span>
 				<span onclick=""  class="x-center typebtn_sel x-round-large x-col s4 x-container x-padding">
-					<span class="fa fa-user"></span><br> Individual</span>
+					<span class="fa fa-user" onclick="gotto_ind()"></span><br> Individual</span>
 				<span onclick=""  class="x-center typebtn_sel x-round-large x-col s4 x-container x-padding">
-					<span class="fa fa-users" onclick="gotto_ind()"></span><br> Household</span>
+					<span class="fa fa-users"></span><br> Household</span>
 			</div>
 		</header>
 		
@@ -47,7 +47,7 @@
 		<div class="">
 
 			<div class="x-container x-row">
-				<span class="x-xlarge x-text-blue"><span class="fa fa-user"></span> Individual</span>
+				<span class="x-xlarge x-text-blue"><span class="fa fa-home"></span> Household</span>
 			</div>
 			<div class="x-container x-row">
 				<input id="s_field" name="" class="x-col s10 x-input x-round-large x-border" placeholder="Search here">
@@ -56,7 +56,7 @@
 			</div><br>
 			<!-- -----------------------PAGE : INDIVIDUAL------------------------------------- -->
 			<div class="x-container x-row">
-				<script type="text/javascript" src="js/Modules/individual.js"></script> <!-- +++++++++++++++++++++++ -->
+				<script type="text/javascript" src="js/Modules/hh_individual.js"></script> <!-- +++++++++++++++++++++++ -->
 				<div class="x-row" id="indv_list" style="max-height: 80vh;overflow-y: scroll;">
 					<!-- -----------LIST of INDIVIDUAL AS CARDS----------- -->
 				</div>
@@ -111,7 +111,7 @@
 			<div class="x-modal-content x-animate-top">
 				<header class="-header x-blue x-padding">
 					<span onclick="$ID('_sample_modal_ind_info').style.display='none';no_edit()" class="x-button x-display-topright x-round-large x-red"><b>close</b></span>
-					Individual - Info
+					Household - Info
 				</header>
 				<div class="x-container  x-padding">
 					<div id="edit_buttons" class="x-left x-container">
@@ -175,22 +175,19 @@
 		}
 
 		function SYNC_DATA(){
-			if(isOnline()){
+			if(isOnline()){ ///////////////////////// CORDOVA PLUGIN ///////////////////
 				_readFileEntry("to_beSync.txt",function (res){
 					var old_inp = JSON.parse(res) 
 					println(" === # Entries found in *temp* :"+old_inp.length)
-					__DATA_TO_SYNC.data.individual.push(old_inp)
-				})
-
+					__DATA_TO_SYNC.data.household.push(old_inp)
+				}) 
 				$ID('modal_user_info').style.display='none'
 				$ID('modal_login_loading').style.display='block'
 				__DATA_TO_SYNC.access.user_id = DATA.credential.user_id
 				__DATA_TO_SYNC.access.session_id = DATA.credential.session_id
-
-				println("---------- DATA TO BE SYNC --------------")
+				println("======== DATA TO SYNC : START =====================")
 				println(JSON.stringify(__DATA_TO_SYNC))
-				println("----------END DATA TO BE SYNC --------------")
-				
+				println("======== DATA TO SYNC : END =====================")
 				$send({
 					action : DOMAIN + "/api/import",
 					method : POST,

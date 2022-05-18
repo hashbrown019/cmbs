@@ -16,10 +16,10 @@ function get_sync(){
 			var resp = JSON.parse(ress);DATA=resp
 			if(!resp.success){$ID('modal_login_loading').style.display='none';println(" * Error in Fetching Data");}
 			else{$ID('modal_login_loading').style.display='none';println(" * Fetching Data Done");}
-			indv_list = DATA.record.individual
+			indv_list = DATA.record.household
 			// _createNewFileEntry("user_data_records2.txt",ress)
-			res_fields=DATA.fields.individual
-			_createNewFileEntry("user_data_records2.txt",ress)
+			res_fields=DATA.fields.household
+			_createNewFileEntry("user_data_records2.txt",ress) ///////////////////////// CORDOVA PLUGIN ///////////////////
 			// println(resp)
 			get_indv_list()
 			alert("Data Syncronization completed")
@@ -29,11 +29,23 @@ function get_sync(){
 	})
 }
 
+// function get_sync_offline(){
+// 	var resp = JSON.parse(ress);DATA=resp
+// 	if(!resp.success){$ID('modal_login_loading').style.display='none';println(" * Error in Fetching Data");}
+// 	else{$ID('modal_login_loading').style.display='none';println(" * Fetching Data Done");}
+// 	indv_list = DATA.record.household
+// 	res_fields=DATA.fields.household
+// 	_createNewFileEntry("user_data_records2.txt",ress)
+// 	// println(resp)
+// 	get_indv_list()
+// 	alert("Data Syncronization completed")
+// }
+
 // function __getf__(){
 // 	$send({
 // 		action : DOMAIN+'/api/fields',
 // 		method : POST,
-// 		data : JSON.stringify({"access":{"user_id":DATA.credential.user_id,"session_id":DATA.credential.session_id},"module":{"name":"individual"}}),
+// 		data : JSON.stringify({"access":{"user_id":DATA.credential.user_id,"session_id":DATA.credential.session_id},"module":{"name":"household"}}),
 // 		func : function (res){
 // 			res_fields=res;
 // 			println(" list field initialized")
@@ -59,35 +71,34 @@ function submit_info_ind(){
 			submitted[main_key][sub_key].push(form_field[i].value)
 		}
 	}
-	submitted['animal_list'] = JSON.stringify(submitted['animal_list'] )
-	submitted['benefits'] = JSON.stringify(submitted['benefits'] )
+	submitted['pet'] = JSON.stringify(submitted['pet'] )
+	submitted['deceased_member'] = JSON.stringify(submitted['deceased_member'] )
 	submitted['job_preference'] = JSON.stringify(submitted['job_preference'] )
-	submitted['list_registered_motor'] = JSON.stringify(submitted['list_registered_motor'] )
-	submitted['work_experience'] = JSON.stringify(submitted['work_experience'] )
-	submitted['edication_background'] = JSON.stringify(submitted['edication_background'] )
 
-	for (var i = 0; i < FIELD_X_IND.length; i++) {delete submitted[FIELD_X_IND[i]]}
+	for (var i = 0; i < FIELD_X_HH.length; i++) {delete submitted[FIELD_X_HH[i]]}
 
-	submitted['record_id'] = SELECTED_IND_ID
+	submitted['group_id'] = SELECTED_IND_ID
 	
 	if(isNewRecord){submitted["added_date"] = new Date().toISOString().slice(0, 19).replace('T', ' ')}
 	submitted['latest_edit_date'] = new Date().toISOString().slice(0, 19).replace('T', ' ')
 
-	__DATA_TO_SYNC.data.individual.push(submitted)
+	__DATA_TO_SYNC.data.household.push(submitted)
 	_readFileEntry("to_beSync.txt",function (res){
 		var old_inp = JSON.parse(res)
 		old_inp.push(submitted)
 		println(old_inp.length+ " == Entry for updated list")
 		_createNewFileEntry("to_beSync.txt",JSON.stringify(old_inp))
 		
-	})
+	})    ///////////////////////// CORDOVA PLUGIN ///////////////////
 
 	alert("Data : "+ SELECTED_IND_ID + " is added for syncronization")
 	$ID('_sample_modal_ind_info').style.display='none'
 	no_edit()
 }
 
-function get_fields_ind(__index){ //FUNCTION : Getting info of Selected Individual on the List
+function get_fields_ind(__index){ //FUNCTION : Getting info of Selected household on the List
+	println(indv_list[__index]+" -- index")
+	println(indv_list[__index])
 	if(indv_list[__index]==undefined){
 		selected_ind = gen_code(4)
 		SELECTED_IND_ID = gen_code(5)
@@ -95,7 +106,7 @@ function get_fields_ind(__index){ //FUNCTION : Getting info of Selected Individu
 	}
 	else{
 		var selected_ind = indv_list[__index]
-		SELECTED_IND_ID = selected_ind.record_id
+		SELECTED_IND_ID = selected_ind.group_id
 		$ID('edit_buttons').style.display = "block"
 	}
 
@@ -153,7 +164,8 @@ function get_fields_ind(__index){ //FUNCTION : Getting info of Selected Individu
 		ffields_1 +='<br>'
 
 	}
-	element.innerHTML = ffields_1
+
+	element.innerHTML = ffields_1 + "<input name='geo_map_group_id' value='"+selected_ind['geo_map_group_id']+"'>"
 	add_class2class("table",'x-table','x-border');
 	add_class2class("table-responsive",'x-responsive');
 	add_class2class("img-responsive","x-img","x-image","x-center")
@@ -193,15 +205,15 @@ function ind_search_field(search_item){
 							<span class="x-text-grey">Name<br></span><span>`+indv_list[i].first_name+" "+indv_list[i].middle_name+" "+indv_list[i].last_name+" "+indv_list[i].ext_name+`</span>
 						</span><br>
 						<span class="x-tiny">
-							<span class="x-text-grey">Birthday<br></span><span>`+indv_list[i].birthdate+`</span>
+							<span class="x-text-grey">Barcode/Geomap ID<br></span><span>`+indv_list[i].barcode+`/<br>`+indv_list[i].geo_map_group_id+`</span>
 						</span>
 					</div>
 					<div class="x-container x-col s6">
 						<span class="x-tiny">
-							<span class="x-text-grey">Status<br></span><span >`+indv_list[i].group_status+`</span>
+							<span class="x-text-grey">Status<br></span><span >`+indv_list[i].hh_status+`</span>
 						</span><br>
 						<span class="x-tiny">
-							<span class="x-text-grey">Contact Number <br></span>`+indv_list[i].contact_no+`<span></span>
+							<span class="x-text-grey">Coordinates(long/lat) <br></span>`+indv_list[i].longitude+` : `+indv_list[i].latitude+`<span></span>
 						</span>
 					</div>
 				</div>`
@@ -218,35 +230,34 @@ function get_indv_list(){
 	var ls_inv_init = ""
 	for (var i = 0; i < indv_list.length; i++) {
 		ls_inv_init += `
-			<div class="x-container x-card x-round-large x-white" onclick="get_ind_data(`+i+`)">
-				<div class=" x-col s6">
-					<span class="x-tiny">
-						<span class="x-text-grey">Name<br></span><span>`+indv_list[i].first_name+" "+indv_list[i].middle_name+" "+indv_list[i].last_name+" "+indv_list[i].ext_name+`</span>
-					</span><br>
-					<span class="x-tiny">
-						<span class="x-text-grey">Birthday<br></span><span>`+indv_list[i].birthdate+`</span>
-					</span>
-				</div>
-				<div class="x-container x-col s6">
-					<span class="x-tiny">
-						<span class="x-text-grey">Status<br></span><span >`+indv_list[i].group_status+`</span>
-					</span><br>
-					<span class="x-tiny">
-						<span class="x-text-grey">Contact Number <br></span>`+indv_list[i].contact_no+`<span></span>
-					</span>
-				</div>
-			</div>`
+				<div class="x-container x-card x-round-large x-white" onclick="get_ind_data(`+i+`)">
+					<div class=" x-col s6">
+						<span class="x-tiny">
+							<span class="x-text-grey">Name<br></span><span>`+indv_list[i].first_name+" "+indv_list[i].middle_name+" "+indv_list[i].last_name+" "+indv_list[i].ext_name+`</span>
+						</span><br>
+						<span class="x-tiny">
+							<span class="x-text-grey">Barcode/Geomap ID<br></span><span>`+indv_list[i].barcode+`/<br>`+indv_list[i].geo_map_group_id+`</span>
+						</span>
+					</div>
+					<div class="x-container x-col s6">
+						<span class="x-tiny">
+							<span class="x-text-grey">Status<br></span><span >`+indv_list[i].hh_status+`</span>
+						</span><br>
+						<span class="x-tiny">
+							<span class="x-text-grey">Coordinates(long/lat) <br></span>`+indv_list[i].longitude +` : `+ indv_list[i].latitude+`<span></span>
+						</span>
+					</div>
+				</div>`
 	}
 	$ID('indv_list').innerHTML = ls_inv_init
 }
 
 function get_ind_data(index_){
+	println("You Selected Item : "+index_)
 	get_fields_ind(index_) 
 	var selected_ind = indv_list[index_]
 }
 
 function gotto_ind(){
-	// alert(window.location.href)
-	goto("hh_home_screen.html?data="+url_args['data'])
-	// goto("hh_home_screen.html?data="+url_args['data'])
+	goto("home_screen.html?data="+JSON.stringify(data_))
 }

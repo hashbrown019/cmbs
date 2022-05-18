@@ -80,3 +80,29 @@ function listDir(path){
 	// return files_names
 }
 //example: list of www/audio/ folder in cordova/ionic app.
+
+
+
+// -------------------------------------------------------------------------------------------------
+function __createNewFileEntry(file_name,file_data,func) {
+	println("============cordova.file.externalDataDirectory===============")
+	println(cordova.file.externalDataDirectory)
+	window.resolveLocalFileSystemURL(cordova.file.externalDataDirectory, function success(dirEntry) {
+		dirEntry.getFile(file_name, { create: true, exclusive: false }, function (fileEntry) {
+			__writeFile(fileEntry, file_data, func);
+		}, _onErrorCreateFile);
+	}, _onErrorResolveUrl);
+}
+
+function __writeFile(fileEntry, dataObj,func) {
+	fileEntry.createWriter(function (fileWriter) {
+		fileWriter.onwriteend = function() {console.log("Successful file write...");func()};
+		fileWriter.onerror = function (e) {alert("Failed file write: " + e.toString());};
+		var _dataObj = new Blob([dataObj], { type: 'text/plain' });
+		// var _dataObj = new Blob([dataObj], { type: 'timage/jpeg' });
+		// if (!dataObj) {dataObj = new Blob(dataObj, { type: 'image/jpeg' });}
+		// if (!dataObj) {dataObj = new Blob(dataObj, { type: 'text/plain' });}
+		// fileWriter.write(dataObj);
+		fileWriter.write(_dataObj);
+	});
+}

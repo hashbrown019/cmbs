@@ -32,3 +32,12 @@ var FIELD_X_IND = [
 		"date_issued",
 		"signature_agree"]
 	
+var FIELD_X_HH = [
+		"",
+		"lot_status",
+		"lighting",
+		"cooking",
+		"documents_old"
+
+		]
+	

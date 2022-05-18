@@ -94,9 +94,13 @@
 						else{
 							document.cookie = "usern="+$ID("login_username").value;
 							document.cookie = "passwd="+ $ID("login_password").value;
-							$ID('login_loading_modal').style.display='none'
-							goto("home_screen.html?data="+__data)
-							// redirectto("home_screen.html?data="+__data)
+							__createNewFileEntry("to_beSync.txt",JSON.stringify(resp),function(){
+								$ID('login_loading_modal').style.display='none'
+								alert("Done Loading synced files")
+								goto("home_screen.html?data="+__data)  //PLS UNCOMMENT LATER
+							})
+
+							// // redirectto("home_screen.html?data="+__data)
 						}
 					}
 				})
