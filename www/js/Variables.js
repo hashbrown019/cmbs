@@ -7,10 +7,7 @@ let  __DATA_TO_SYNC = {
 		"user_id": "",
 		"session_id":""
 	},
-	"data":{
-		"individual":[],
-		"household":[],
-	}
+	"data":{}
 }
 
 var FIELD_X_IND = [

@@ -176,37 +176,41 @@
 
 		function SYNC_DATA(){
 			if(isOnline()){
+				$ID('modal_user_info').style.display='none'
+				$ID('modal_login_loading').style.display='block'
+				
 				_readFileEntry("to_beSync.txt",function (res){
 					var old_inp = JSON.parse(res) 
 					println(" === # Entries found in *temp* :"+old_inp.length)
-					__DATA_TO_SYNC.data.individual.push(old_inp)
-				})
+					__DATA_TO_SYNC.data=old_inp.data
 
-				$ID('modal_user_info').style.display='none'
-				$ID('modal_login_loading').style.display='block'
-				__DATA_TO_SYNC.access.user_id = DATA.credential.user_id
-				__DATA_TO_SYNC.access.session_id = DATA.credential.session_id
+					__DATA_TO_SYNC.access.user_id = DATA.credential.user_id
+					__DATA_TO_SYNC.access.session_id = DATA.credential.session_id
 
-				println("---------- DATA TO BE SYNC --------------")
-				println(JSON.stringify(__DATA_TO_SYNC))
-				println("----------END DATA TO BE SYNC --------------")
-				
-				$send({
-					action : DOMAIN + "/api/import",
-					method : POST,
-					data : JSON.stringify(__DATA_TO_SYNC),
-					func : function (res_){
-						var res = JSON.parse(res_)
-						println("----- res ------")
-						println(JSON.stringify(res))
-						println("-----------")
-						alert("Data Sync Report\nResult : "+res.message)
-						if(res.success){
-							get_sync()
-							_createNewFileEntry("to_beSync.txt","[]") ///////////////////////// CORDOVA PLUGIN ///////////////////
+					println("---------- DATA TO BE SYNC --------------")
+					println(JSON.stringify(__DATA_TO_SYNC))
+					println("----------END DATA TO BE SYNC --------------")
+					_createNewFileEntry("LAST_SYNC.txt",JSON.stringify(__DATA_TO_SYNC))
+					$send({
+						action : DOMAIN + "/api/import",
+						method : POST,
+						data : JSON.stringify(__DATA_TO_SYNC),
+						func : function (res_){
+							var res = JSON.parse(res_)
+							println("----- res ------")
+							println(JSON.stringify(res))
+							println("-----------")
+							alert("Data Sync Report\nResult : "+res.message)
+							if(res.success){
+								get_sync()
+								// _createNewFileEntry("to_beSync.txt","[]") ///////////////////////// CORDOVA PLUGIN ///////////////////
+								_createNewFileEntry("to_beSync.txt",JSON.stringify({"data":{"individual":[],"household":[]}}))
+							}
 						}
-					}
+					})
+
 				})
+
 			}else{
 				alert("ooops. you are offline\nplease connect to the internet via Wifi or Cellular Data (Charges may apply)")
 			}

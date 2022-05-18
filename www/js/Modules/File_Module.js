@@ -54,9 +54,9 @@ function readFile(fileEntry,func) {
 }
 
 // ---------------------------------------
-function _onErrorResolveUrl(e){console.log("_onErrorResolveUrl xxxxxxxxxxxxxxxxxxxxxxxx");console.log(e);};
-function _onErrorCreateFile(e){console.log("Create file fail xxxxxxxxxxxxxxxxxxxxxxxxx");console.log(e);};
-function onErrorReadFile(e){$print(e)}
+function _onErrorResolveUrl(e){alert(" xx File Handling Error xx\n"+e);console.log("_onErrorResolveUrl xxxxxxxxxxxxxxxxxxxxxxxx");console.log(e);};
+function _onErrorCreateFile(e){alert(" xx File Handling Error xx\n"+e);console.log("Create file fail xxxxxxxxxxxxxxxxxxxxxxxxx");console.log(e);};
+function onErrorReadFile(e){alert(" xx File Handling Error xx\n"+e);$print(e)}
 
 
 function listDir(path){

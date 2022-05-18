@@ -6,40 +6,50 @@ let SELECTED_IND_ID = undefined
 let isNewRecord = false
 let res_fields = ""
 
-get_sync()
-function get_sync(){
-	$send({
-		action : DOMAIN+"/api/login",
-		method : "POST",
-		data : JSON.stringify(data_),
-		func : function (ress) {
-			var resp = JSON.parse(ress);DATA=resp
-			if(!resp.success){$ID('modal_login_loading').style.display='none';println(" * Error in Fetching Data");}
-			else{$ID('modal_login_loading').style.display='none';println(" * Fetching Data Done");}
-			indv_list = DATA.record.household
-			// _createNewFileEntry("user_data_records2.txt",ress)
-			res_fields=DATA.fields.household
-			_createNewFileEntry("user_data_records2.txt",ress) ///////////////////////// CORDOVA PLUGIN ///////////////////
-			// println(resp)
-			get_indv_list()
-			alert("Data Syncronization completed")
-			// __getf__()
-			
-		}
-	})
+
+document.addEventListener("deviceready", onDeviceReady, false);
+function onDeviceReady() {
+	console.log(cordova.file);
+	println(" * household Module Ready ===================");
+	get_sync()
 }
 
-// function get_sync_offline(){
-// 	var resp = JSON.parse(ress);DATA=resp
-// 	if(!resp.success){$ID('modal_login_loading').style.display='none';println(" * Error in Fetching Data");}
-// 	else{$ID('modal_login_loading').style.display='none';println(" * Fetching Data Done");}
-// 	indv_list = DATA.record.household
-// 	res_fields=DATA.fields.household
-// 	_createNewFileEntry("user_data_records2.txt",ress)
-// 	// println(resp)
-// 	get_indv_list()
-// 	alert("Data Syncronization completed")
-// }
+get_sync()
+function get_sync(){
+	get_sync_offline()
+	// $send({
+	// 	action : DOMAIN+"/api/login",
+	// 	method : "POST",
+	// 	data : JSON.stringify(data_),
+	// 	func : function (ress) {
+	// 		var resp = JSON.parse(ress);DATA=resp
+	// 		if(!resp.success){$ID('modal_login_loading').style.display='none';println(" * Error in Fetching Data");}
+	// 		else{$ID('modal_login_loading').style.display='none';println(" * Fetching Data Done");}
+	// 		indv_list = DATA.record.household
+	// 		// _createNewFileEntry("user_data_records2.txt",ress)
+	// 		res_fields=DATA.fields.household
+	// 		_createNewFileEntry("user_data_records2.txt",ress) ///////////////////////// CORDOVA PLUGIN ///////////////////
+	// 		// println(resp)
+	// 		get_indv_list()
+	// 		alert("Data Syncronization completed")
+	// 		// __getf__()
+			
+	// 	}
+	// })
+}
+
+function get_sync_offline(){
+	_readFileEntry("user_data_records2.txt",function (resp){
+		var resp = JSON.parse(resp);DATA=resp
+		if(!resp.success){$ID('modal_login_loading').style.display='none';println(" * Error in Fetching Data");}
+		else{$ID('modal_login_loading').style.display='none';println(" * Fetching Data Done");}
+		indv_list = DATA.record.household
+		res_fields=DATA.fields.household
+		get_indv_list()
+		// alert("Data Syncronization completed")
+	})
+
+}
 
 // function __getf__(){
 // 	$send({
@@ -82,10 +92,10 @@ function submit_info_ind(){
 	if(isNewRecord){submitted["added_date"] = new Date().toISOString().slice(0, 19).replace('T', ' ')}
 	submitted['latest_edit_date'] = new Date().toISOString().slice(0, 19).replace('T', ' ')
 
-	__DATA_TO_SYNC.data.household.push(submitted)
+	// __DATA_TO_SYNC.data.household.push(submitted)
 	_readFileEntry("to_beSync.txt",function (res){
 		var old_inp = JSON.parse(res)
-		old_inp.push(submitted)
+		old_inp.data.household.push(submitted)
 		println(old_inp.length+ " == Entry for updated list")
 		_createNewFileEntry("to_beSync.txt",JSON.stringify(old_inp))
 		

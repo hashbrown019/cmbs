@@ -58,19 +58,19 @@
 			else{$ID("offline").style.display="block"}
 		}, 1000)
 
-		_readFileEntry("user_data_records2.txt",function (res){
-			println(JSON.parse(res).credential.user_id)
-			if(res==undefined){
-				alert("Hello there, It seems that this is your 1st time loging in. please input the credentials on textbox and it will automatically sync from the server.\nDont forget to connect to WiFi or Cellular Data(Charges may apply);")
-			}
-		})
+		document.addEventListener("deviceready", onDeviceReady, false);
+		function onDeviceReady() {
+			console.log(cordova.file);
+			println(" * Login Module Ready ================================");
 
-		_readFileEntry("to_beSync.txt",function (res){
-			if(res==undefined || res=="" || res==null){
-				println(" == No Entry for updated list")
-				_createNewFileEntry("to_beSync.txt",JSON.stringify([]))
-			}
-		})
+			_readFileEntry("to_beSync.txt",function (res){
+				if(res==undefined || res=="" || res==null){
+					_createNewFileEntry("to_beSync.txt",JSON.stringify({"data":{"individual":[],"household":[]}}))
+				}else{
+				}
+			})
+		}
+
 
 		if(getCookie("usern")==undefined || getCookie("usern")==null){
 			println(' * no Cookies/Session found')
@@ -94,7 +94,7 @@
 						else{
 							document.cookie = "usern="+$ID("login_username").value;
 							document.cookie = "passwd="+ $ID("login_password").value;
-							__createNewFileEntry("to_beSync.txt",JSON.stringify(resp),function(){
+							__createNewFileEntry("user_data_records2.txt",JSON.stringify(resp),function(){
 								$ID('login_loading_modal').style.display='none'
 								alert("Done Loading synced files")
 								goto("home_screen.html?data="+__data)  //PLS UNCOMMENT LATER
