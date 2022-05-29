@@ -37,9 +37,13 @@
 					<span class="fa fa-plus"></span><br> Add
 				</span>
 				<span onclick=""  class="x-center typebtn_sel x-round-large x-col s4 x-container x-padding">
-					<span class="fa fa-user"></span><br> Individual</span>
-				<span onclick=""  class="x-center typebtn_sel x-round-large x-col s4 x-container x-padding">
-					<span class="fa fa-users" onclick="gotto_ind()"></span><br> Household</span>
+					<span class="fa fa-user"></span><br> 
+					Individual
+				</span>
+				<span onclick="gotto_ind()" class="x-center typebtn_sel x-round-large x-col s4 x-container x-padding">
+					<span class="fa fa-users"></span><br> 
+					Household
+				</span>
 			</div>
 		</header>
 		
@@ -206,6 +210,10 @@
 								// _createNewFileEntry("to_beSync.txt","[]") ///////////////////////// CORDOVA PLUGIN ///////////////////
 								_createNewFileEntry("to_beSync.txt",JSON.stringify({"data":{"individual":[],"household":[]}}))
 							}
+						},
+						err : function(e){
+							alert("Syncing Failed please try again later\n-Your Edited Entries will be saved and ready to be sync later\n[ ERROR CODE : "+e.target.status+"]")
+							$ID('modal_login_loading').style.display='none'
 						}
 					})
 

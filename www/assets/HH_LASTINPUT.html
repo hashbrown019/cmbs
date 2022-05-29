@@ -1,0 +1,46 @@
+<div class="row mt-xl">
+	<div class="col-sm-8 ">
+		<div class="popup-gallery"></div>
+	</div>
+	<div class="col-sm-4 ">        
+		<h5 id="label_location">            
+			Latitude: <span id="current_lat">00</span>            <br>
+			Longitude: <span id="current_log">00</span>             <br>
+			<button type="button" id="set_location" class="mb-xs mt-xs mr-xs btn btn-sm btn-primary ">Set Location</button>
+			<button type="button" id="set_manual" class="mb-xs mt-xs mr-xs btn btn-sm btn-primary ">Set Manually</button>
+			<button type="button" id="show_location" class="mb-xs mt-xs mr-xs btn btn-sm btn-primary hide-object ">Show on Google Map</button>
+		</h3>
+		<input type="hidden" id="latitude" name="latitude" value="">
+		<input type="hidden" id="longitude" name="longitude" value="">    
+	</div>
+</div>
+
+
+<button type="button" class="mb-xs mt-xs mr-xs btn btn-primary mt-lg" id="insert_document">Capture New Photo</button>
+<input type="hidden" id="documents_old" name="documents_old" value=''>
+<input type="hidden" id="documents" name="documents" value=''>
+<input type="hidden" id="hh_group_id" value="0">
+
+<div class="search-inv">
+	<h4>Search Individual </h4>
+	<select id="search_record" class="form-control"></select>
+</div>
+
+<h4>Family Member</h4>
+<div class="table-responsive">    
+	<table class="table mb-none">       
+		<thead>            
+			<tr>                            
+				<th>Action</th>                            
+				<th>Full Name</th>                
+				<th>Gender</th>                
+				<th>Birth Date</th>                
+				<th>House Hold</th>                
+				<th>Address Status</th>                
+				<th>Status</th>            
+			</tr>        
+		</thead>        
+		<tbody id="record_list">                    
+		</tbody>    
+	</table>
+</div>

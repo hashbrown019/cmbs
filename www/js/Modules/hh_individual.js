@@ -154,15 +154,14 @@ function get_fields_ind(__index){ //FUNCTION : Getting info of Selected househol
 			var _keys = flist[i].option
 			for (var ii = 0; ii < _keys.length; ii++) {
 				_opt += `<option class="ins_f_" value='`+_keys[ii]+`'>`+_keys[ii]+`</option>`
-				
 			}
 			ffields_1 += `
 			<span class="x-text-grey">`+flist[i].label+`</span>
 			<select value="`+selected_ind[flist[i].name]+`" class='ins_f_ x-select x-border x-round-large' name="`+flist[i].name+`" id=`+flist[i].name+`>`+_opt+`</select>`
 		}
 
-		if(Tt == "html" || Tt =="json" || flist[i].property.type == "html"){
-			ffields_1 += `` + flist[i].option
+		if(Tt == "html" || Tt =="json" || flist[i].property.type == "html" || flist[i].property.type == "json"){
+			ffields_1 += `<hr><b>` + flist[i].label+`</b><br>` + flist[i].option
 		}
 
 		if(Tt == "label"){
@@ -175,15 +174,19 @@ function get_fields_ind(__index){ //FUNCTION : Getting info of Selected househol
 
 	}
 
-	element.innerHTML = ffields_1 + "<input name='geo_map_group_id' value='"+selected_ind['geo_map_group_id']+"'>"
+	element.innerHTML = ffields_1 + "<input hidden  name='geo_map_group_id' value='"+selected_ind['geo_map_group_id']+"'>"
 	add_class2class("table",'x-table','x-border');
 	add_class2class("table-responsive",'x-responsive');
 	add_class2class("img-responsive","x-img","x-image","x-center")
 	add_class2class("firstfld","x-input","x-border")
 	add_class2class("add-row","x-btn","x-round-large","x-blue")
+
+
+
 	$ID('_sample_modal_ind_info').style.display='block' // IND for Data
 	const inputs = document.querySelectorAll('.ins_f_');
 	inputs.forEach(input => input.disabled = true);
+	re_create_inputs()
 }
 
 let temp_f_sel = 0
