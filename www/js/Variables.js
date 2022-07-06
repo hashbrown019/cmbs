@@ -34,7 +34,8 @@ var FIELD_X_HH = [
 		"lot_status",
 		"lighting",
 		"cooking",
-		"documents_old"
+		"documents_old",
+		"image_hh"
 
 		]
 	

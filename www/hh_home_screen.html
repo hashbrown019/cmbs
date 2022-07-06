@@ -10,6 +10,7 @@
         <script src="cordova.js"></script>
 
 		<script type="text/javascript" src="js/Brorn.min.js"></script>
+		<script type="text/javascript" src="js/Modules/img_upload.js"></script>
 		<script type="text/javascript" src="js/Variables.js"></script>
 		<script type="text/javascript" src="js/Modules/File_Module.js"></script> <!-- +++++++++++++++++++++++ -->
 
@@ -47,9 +48,7 @@
 			</div>
 		</header>
 		
-
 		<div class="">
-
 			<div class="x-container x-row">
 				<span class="x-xlarge x-text-blue"><span class="fa fa-home"></span> Household</span>
 			</div>
@@ -61,7 +60,11 @@
 			<!-- -----------------------PAGE : INDIVIDUAL------------------------------------- -->
 			<div class="x-container x-row">
 				<script type="text/javascript" src="js/Modules/hh_individual.js"></script> <!-- +++++++++++++++++++++++ -->
-				<script type="text/javascript" src="js/Modules/hh_re_create_inputs.js"></script> <!-- +++++++++++++++++++++++ -->
+				<script type="text/javascript" src="js/Modules/hh_re_create_inputs.js"></script> <!-- +++++++++++++++++ -->
+				<div class="x-row" id="indv_list_tobesync" >
+					<!-- -----------LIST of INDIVIDUAL AS CARDS----------- -->
+				</div>
+				<hr>
 				<div class="x-row" id="indv_list" style="max-height: 80vh;overflow-y: scroll;">
 					<!-- -----------LIST of INDIVIDUAL AS CARDS----------- -->
 				</div>
@@ -88,11 +91,19 @@
 							<span class="x-text-grey">Account Expiration : </span><span id="det_exdate" ></span>
 						</span>
 					</div>
-					<div class="x-padding x-center">
-						<button class="x-btn x-round-large x-block x-green" onclick="SYNC_DATA()">
-							Sync
-						</button>
+					<div class="x-container">
+						<div class="x-padding x-center x-col s6">
+							<button class="x-btn x-round-large x-block x-green" onclick="SYNC_DATA()">
+								Sync
+							</button>
+						</div>
+						<div class="x-padding x-center x-col s6">
+							<button class="x-btn x-round-large x-block x-blue" onclick="SYNC_DATA_IMAGE()">
+								Upload all Image
+							</button>
+						</div>
 					</div>
+					<hr>
 					<div class="x-padding x-center">
 						<button class="x-btn x-round-large x-block x-red" onclick="logout()">
 							Sign out
@@ -102,6 +113,7 @@
 			</div>
 		</div>
 		<!-- -----------------------MODAL : LOADING-------------------------------------- -->
+
 		<div id="modal_login_loading" class="x-modal" style="display:block">
 			<div class="x-modal-content x-padding x-margin x-round-large">
 				<div class="x-container x-center x-padding">
@@ -110,7 +122,6 @@
 				</div>
 			</div>
 		</div>
-
 		<!-- ---------------------------MODAL : SAMPLE INDV INFO ------------------------------ -->
 		<div id="_sample_modal_ind_info" class="x-modal" style="display:none;padding: 0px;margin: 0px;">
 			<div class="x-modal-content x-animate-top">
@@ -127,6 +138,16 @@
 						</div>
 					</div>
 				</div>
+				<div class="x-container  x-padding">
+					<script type="text/javascript" src="js/Modules/media_capture.js"></script>
+					<div class="x-container" id="img_cont"></div>  <!-- image container -->
+					<span class="x-large">Image upload</span><br>
+					<span class="x-text-red">
+						Please upload images when you are connected to the internet<br>
+						youb can re-upload images when it it fails
+					</span>
+					<button class="x-input x-border x-round-large" id = "imageCapture" onclick="_imageCapture() ">Open Camera</button>
+				</div>
 				<form action="#" method="POST">
 					<div id="ind_fields1" class="x-row x-container x-padding">
 						<!-- <iframe src="modal_ind.html" style="border:0px; height:100vh;"></iframe> -->
@@ -134,8 +155,29 @@
 				</form>
 			</div>
 		</div>
-		<div class="x-container" style="position: fixed;">
-			<button class="x-button x-circle x-blue"><b>+</b></button>
+		<!-- -================================== -->
+		<script type="text/javascript" src="js/Modules/HH_CALLS_IND.js"></script> <!-- +++++++++++++++++ -->
+		<div id="IND_sample_modal_ind_info" class="x-modal" style="display:none;padding: 0px;margin: 0px;">
+			<div class="x-modal-content x-animate-top">
+				<header class="-header x-blue x-padding">
+					<span onclick="$ID('IND_sample_modal_ind_info').style.display='none';_no_edit()" class="x-button x-display-topright x-round-large x-red"><b>close</b></span>
+					Individual - Info
+				</header>
+				<div class="x-container  x-padding">
+					<div id="_edit_buttons" class="x-left x-container">
+						<button id="_btn_edit" onmouseup="_go_edit()" class="x-btn x-round x-yellow"><span class="fa fa-pencil"></span> Edit</button>
+						<div id="_bttnHid" style="display:none" >
+							<!-- <button onmouseup="no_edit()" class=" x-btn x-round x-red"><span class="fa fa-remove"></span> Cancel</button> -->
+							<button onmouseup="____submit_info_ind()" class=" x-btn x-round x-green"><span class="fa fa-check"></span> submit</button>
+						</div>
+					</div>
+				</div>
+				<form action="#" method="POST">
+					<div id="ind_fields2" class="x-row x-container x-padding">
+						<!-- <iframe src="modal_ind.html" style="border:0px; height:100vh;"></iframe> -->
+					</div>
+				</form>
+			</div>
 		</div>
 
 	</body>
@@ -218,7 +260,6 @@
 					})
 
 				})
-
 			}else{
 				alert("ooops. you are offline\nplease connect to the internet via Wifi or Cellular Data (Charges may apply)")
 			}
@@ -231,8 +272,6 @@
 			const inputs = document.querySelectorAll('.ins_f_');
 			inputs.forEach(input => input.disabled = false);
 		}
-
-		// offline
-
+		
 	</script>
 </html>

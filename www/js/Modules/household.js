@@ -31,7 +31,7 @@ function get_hh_list(){
 					</span><br>
 					<span class="x-tiny">
 						<span class="x-text-grey">Birthday<br></span><span>`+indv_list[i].birthdate+`</span>
-					</span>
+					</span
 				</div>
 				<div class="x-container x-col s6">
 					<span class="x-tiny">

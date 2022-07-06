@@ -43,8 +43,8 @@
 		<div id="login_loading_modal" class="x-modal">
 			<div class="x-modal-content x-padding x-margin x-round-large">
 				<div class="x-container x-center x-padding">
-					<!-- <span onclick="document.getElementById('login_loading_modal').style.display='none'"
-					class="x-button x-display-topright">&times;</span> -->
+					<span onclick="document.getElementById('login_loading_modal').style.display='none'"
+					class="x-button x-display-topright">&times;</span>
 					<span class="x-xxxlarge fa fa-circle-o-notch fa-spin x-text-blue"></span><br>
 					<span class="x-text-gray">Loading. please wait</span>
 				</div>
@@ -69,12 +69,19 @@
 				}else{
 				}
 			})
+
+			_readFileEntry("images.txt",function (res){
+				println("Writing IMAGE JSON")
+				if(res==undefined || res=="" || res==null){
+					_createNewFileEntry("images.txt",JSON.stringify([]))
+					println("Created new IMAGE JSON")
+
+				}else{println("Existing new IMAGE JSON")
+				}
+			})
 		}
 
-
-		if(getCookie("usern")==undefined || getCookie("usern")==null){
-			println(' * no Cookies/Session found')
-		}
+		if(getCookie("usern")==undefined || getCookie("usern")==null){println(' * no Cookies/Session found')}
 		else{println('hascookie')}
 
 		function login(log_usern,log_passwd){
@@ -97,7 +104,7 @@
 							__createNewFileEntry("user_data_records2.txt",JSON.stringify(resp),function(){
 								$ID('login_loading_modal').style.display='none'
 								alert("Done Loading synced files")
-								goto("home_screen.html?data="+__data)  //PLS UNCOMMENT LATER
+								goto("hh_home_screen.html?data="+__data)  //PLS UNCOMMENT LATER
 							})
 
 							// // redirectto("home_screen.html?data="+__data)

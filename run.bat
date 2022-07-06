@@ -1,0 +1,1 @@
+cls & cordova run android

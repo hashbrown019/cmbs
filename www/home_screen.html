@@ -10,6 +10,7 @@
         <script src="cordova.js"></script>
 
 		<script type="text/javascript" src="js/Brorn.min.js"></script>
+		<script type="text/javascript" src="js/Modules/img_upload.js"></script>
 		<script type="text/javascript" src="js/Variables.js"></script>
 		<script type="text/javascript" src="js/Modules/File_Module.js"></script> <!-- +++++++++++++++++++++++ -->
 
@@ -61,6 +62,10 @@
 			<!-- -----------------------PAGE : INDIVIDUAL------------------------------------- -->
 			<div class="x-container x-row">
 				<script type="text/javascript" src="js/Modules/individual.js"></script> <!-- +++++++++++++++++++++++ -->
+				<div class="x-row" id="indv_list_tobesync" >
+					<!-- -----------LIST of INDIVIDUAL AS CARDS----------- -->
+				</div>
+				<hr>
 				<div class="x-row" id="indv_list" style="max-height: 80vh;overflow-y: scroll;">
 					<!-- -----------LIST of INDIVIDUAL AS CARDS----------- -->
 				</div>
@@ -87,12 +92,20 @@
 							<span class="x-text-grey">Account Expiration : </span><span id="det_exdate" ></span>
 						</span>
 					</div>
-					<div class="x-padding x-center">
-						<button class="x-btn x-round-large x-block x-green" onclick="SYNC_DATA()">
-							Sync
-						</button>
+					<div class="x-container">
+						<div class="x-padding x-center x-col s6">
+							<button class="x-btn x-round-large x-block x-green" onclick="SYNC_DATA()">
+								Upload all Data
+							</button>
+						</div>
+						<div class="x-padding x-center x-col s6">
+							<button class="x-btn x-round-large x-block x-blue" onclick="SYNC_DATA_IMAGE()">
+								Upload all Image
+							</button>
+						</div>
 					</div>
-					<div class="x-padding x-center">
+					<hr>
+					<div class="x-container x-padding x-center">
 						<button class="x-btn x-round-large x-block x-red" onclick="logout()">
 							Sign out
 						</button>
@@ -101,14 +114,24 @@
 			</div>
 		</div>
 		<!-- -----------------------MODAL : LOADING-------------------------------------- -->
-		<div id="modal_login_loading" class="x-modal" style="display:block">
+		<div id="modal_login_loading" class="x-modal" style="display:block" onclick="$ID('modal_login_loading').style.display='none';">
 			<div class="x-modal-content x-padding x-margin x-round-large">
 				<div class="x-container x-center x-padding">
 					<span class="x-xxxlarge fa fa-circle-o-notch fa-spin x-text-blue"></span><br>
-					<span class="x-text-gray">Loading. please wait</span>
+					<span class="x-text-gray">Loading. please wait</span><br>
+					<span class="x-text-gray x-tiny">Click here to suspend</span>
 				</div>
 			</div>
 		</div>
+		<!-- -----------------------MODAL : LOADING-------------------------------------- -->
+<!-- 		<div id="upload_img" class="x-modal" style="display:block">
+			<div class="x-modal-content x-padding x-margin x-round-large">
+				<span onclick="$ID('upload_img').style.display='none';" class="x-button x-display-topright x-round-large x-red"><b>close</b></span>
+				<div class="x-container x-center x-padding">
+					<input type="file" name="_file" id="_file">
+				</div>
+			</div>
+		</div> -->
 
 		<!-- ---------------------------MODAL : SAMPLE INDV INFO ------------------------------ -->
 		<div id="_sample_modal_ind_info" class="x-modal" style="display:none;padding: 0px;margin: 0px;">
@@ -126,15 +149,24 @@
 						</div>
 					</div>
 				</div>
+				<div id="img_upload_area" class="x-container  x-padding">
+					<script type="text/javascript" src="js/Modules/media_capture.js"></script>
+					<div class="x-container" id="img_cont"></div>  <!-- image container -->
+					<span class="x-large">Image upload</span><br>
+					<span class="x-text-red">
+						Please upload images when you are connected to the internet<br>
+						youb can re-upload images when it it fails
+					</span>
+					<button class="x-input x-border x-round-large" id = "imageCapture" onclick="imageCapture() ">Open Camera</button>
+					<!-- <input class="x-input x-border x-round-large" type="file" id="file" name="file" accept="image/*" multiple onchange="upload()"> -->
+					<!-- <button onclick="upload()" class="x-btn x-green x-block">Upload</button> -->
+				</div>
 				<form action="#" method="POST">
 					<div id="ind_fields1" class="x-row x-container x-padding">
 						<!-- <iframe src="modal_ind.html" style="border:0px; height:100vh;"></iframe> -->
 					</div>
 				</form>
 			</div>
-		</div>
-		<div class="x-container" style="position: fixed;">
-			<button class="x-button x-circle x-blue"><b>+</b></button>
 		</div>
 
 	</body>
@@ -208,7 +240,9 @@
 							if(res.success){
 								get_sync()
 								// _createNewFileEntry("to_beSync.txt","[]") ///////////////////////// CORDOVA PLUGIN ///////////////////
-								_createNewFileEntry("to_beSync.txt",JSON.stringify({"data":{"individual":[],"household":[]}}))
+								__createNewFileEntry("to_beSync.txt",JSON.stringify({"data":{"individual":[],"household":[]}}),function(){
+										goto("home_screen.html?data="+url_args['data'])
+								})
 							}
 						},
 						err : function(e){
