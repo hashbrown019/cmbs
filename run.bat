@@ -1,1 +1,1 @@
-cls & cordova run android
+cls & cordova run android 
